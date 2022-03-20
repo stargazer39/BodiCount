@@ -7,6 +7,10 @@
         <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/layout/activity_organizer_login.xml" value="0.5" />
+        <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/layout/activity_student_manager_add_student.xml" value="0.33" />
+        <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/layout/activity_student_manager_display_student_list.xml" value="0.2234375" />
+        <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/layout/activity_student_manager_edit_student_details.xml" value="0.2234375" />
+        <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/layout/activity_student_manager_read_student_details.xml" value="0.2234375" />
         <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/layout/activity_time_slot_manager.xml" value="0.25" />
         <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/layout/activity_timeslot_edit.xml" value="0.25" />
         <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/layout/activity_timetable.xml" value="0.2546875" />
