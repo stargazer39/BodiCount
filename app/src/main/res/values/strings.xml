@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">BodiCount</string>
+    <string name="empty_table_notice">Looks like you don\'t have any timetables, Get started by adding one</string>
+    <string name="timetable_add_btn">"Add "</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vertical_ellipsis">&#8942;  </string>
+    <string name="empty_timeslot_notice">Looks like you don\'t have any timeslots, Get started by adding one</string>
+    <string name="new_timeslot_hint">Name</string>
+    <string name="timetable_from">From</string>
+    <string name="timetable_to">To</string>
+    <string name="timetable_save_btn">Save</string>
+    <string name="timetable_cancel_btn">Cancel</string>
+    <string name="timetable_pick_start_time">Pick Start Time</string>
+    <string name="timetable_pick_end_time">Pick End Time</string>
+    <string name="held_online_sw">Held online</string>
+    <string name="organizer_login_name">First Name</string>
+    <string name="organizer_login_lastname">Last Name</string>
+    <string name="organizer_login_email">Email</string>
+    <string name="organizer_login_password">Password</string>
+    <string name="organizer_login_repeat_password">Repeat Password</string>
+    <string name="organizer_signup_btn">Sign Up</string>
+    <string name="add_new_slot">Add new slot</string>
 </resources>

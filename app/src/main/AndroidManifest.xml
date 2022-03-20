@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BodiCount">
         <activity
-            android:name=".MainActivity"
+            android:name=".organizer.OrganizerLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".timeslot.TimeslotEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".timeslot.TimeSlotManagerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,6 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".timetable.TimetableManagerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
