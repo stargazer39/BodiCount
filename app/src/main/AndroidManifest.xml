@@ -17,6 +17,19 @@
             android:exported="false" />
         <activity
             android:name=".timeslot.TimeSlotManagerActivity"
+            android:name=".StudentManagerReadStudentDetails"
+            android:exported="false" />
+        <activity
+            android:name=".StudentManagerEditStudentDetails"
+            android:exported="false" />
+        <activity
+            android:name=".StudentManagerAddStudent"
+            android:exported="false" />
+        <activity
+            android:name=".StudentManagerDisplayStudentList"
+            android:exported="false" />
+        <activity
+            android:name=".StudentManagerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
