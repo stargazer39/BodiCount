@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BodiCount">
         <activity
+            android:name=".StudentManagerDelete"
+            android:exported="false" />
+        <activity
             android:name=".StudentManagerReadStudentDetails"
             android:exported="false" />
         <activity
