@@ -17,6 +17,8 @@
             android:exported="false" />
         <activity
             android:name=".timeslot.TimeSlotManagerActivity"
+            />
+        <activity
             android:name=".StudentManagerReadStudentDetails"
             android:exported="false" />
         <activity
