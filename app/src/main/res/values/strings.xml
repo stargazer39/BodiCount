@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">BodiCount</string>
+    <string name="student_manager_firstname">First Name</string>
+    <string name="topic_student_list">Student  List</string>
+    <string name="listDescription">Looks like you don\'t have any members,</string>
+    <string name="descriptionStudentList">Looks like you don\'t have any members, Get started by adding one</string>
+    <string name="addOneBtton">Add One</string>
+    <string name="topic2_student_list">Student List</string>
+    <string name="vertical_ellipsis">&#8942;  </string>
+    <string name="AddMemberButton">Add New +</string>
+    <string name="AddStudentTopic">Add Student Details</string>
+    <string name="StudentManagerAddFIrstName">First Name</string>
+    <string name="StudentManagerAddFirstNameField" />
+    <string name="StudentManagerAddLastName">Last Name</string>
+    <string name="StudentManagerAddLastNameField" />
+    <string name="StudentManagerAddPhone">Phone Number</string>
+    <string name="StudentManagerAddPhoneField" />
+    <string name="StudentManagerAddEmail">Email Address</string>
+    <string name="StudentManagerAddSTDBtn">Add Student</string>
+    <string name="StudentManagerEditStudentTopic">Edit Student Details</string>
+    <string name="StudentManagerEditFirstName">First Name</string>
+    <string name="StudentManagerEitFirstNameField" />
+    <string name="StudentManagerEditLastName">Last Name</string>
+    <string name="StudentManagerEditLastNameField" />
+    <string name="StudentManagerEditPhone">Phone Number</string>
+    <string name="StudentManagerEditPhoneField" />
+    <string name="StudentManagerEditEmail">Email Address</string>
+    <string name="StudentManagerEditEmailField" />
+    <string name="StudentManagerEDITBtn">Edit Details</string>
+    <string name="StudentManagerReadFirstName">"First Name : Dilmi "</string>
+    <string name="StudentManagerReadLastName">Last Name : Lakshana.</string>
+    <string name="StudentManagerReadEmail">Email Address : dilmilakshana@gmail.com</string>
+    <string name="StudentManagerReadPhone">Phone Number : 0772378543</string>
+    <string name="StudentManagerREADPreBTN">Previous</string>
+    <string name="StudentManagerReadNextBtn">Next</string>
 </resources>
