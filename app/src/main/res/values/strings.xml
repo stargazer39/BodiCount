@@ -54,4 +54,12 @@
     <string name="StudentManagerReadPhone">Phone Number : 0772378543</string>
     <string name="StudentManagerREADPreBTN">Previous</string>
     <string name="StudentManagerReadNextBtn">Next</string>
+    <string name="StudentManagerDeleteNAME1">Dilmi Lakshana</string>
+    <string name="StdManager">Dilmi Lakshana</string>
+    <string name="StudentManagerDeleteStudentList">Student List</string>
+    <string name="StudentManagerDeleteS1">Dilmi Lakshana</string>
+    <string name="StudentManagerDeleteS2">Bryan Clifford</string>
+    <string name="StudentManagerDeleteS3">Shara Chanmini</string>
+    <string name="StudentManagerDeleteS4">Chamina Sewwandi</string>
+    <string name="StudentManagerDeleteBtn">Delete</string>
 </resources>
