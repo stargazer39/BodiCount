@@ -7,15 +7,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.bodicount.SimpleInputDialog;
 import com.bodicount.R;
 import com.bodicount.timetable.TimetableAdaptor;
+import com.google.android.material.timepicker.MaterialTimePicker;
+import com.google.android.material.timepicker.TimeFormat;
 
 public class TimeSlotManagerActivity extends AppCompatActivity {
-    private String timetables[] = { "Timeslot 1", "Timeslot 2", "Timeslot 3", "Timeslot 4", "Timeslot 5", "" };
+    private String timetables[] = { "pp" };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

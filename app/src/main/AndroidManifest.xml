@@ -8,40 +8,46 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BodiCount">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".organizer.OrganizerLoginActivity"
-            android:exported="false" />
+            android:name=".organizer.OrganizerSignUpActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".timeslot.TimeslotEditActivity"
             android:exported="false" />
         <activity
             android:name=".timeslot.TimeSlotManagerActivity"
-            android:exported="false"
-            />
+            android:exported="true">
+        </activity>
         <activity
             android:name=".StudentManagerDelete"
-            android:exported="false" />
+            android:exported="true">
+        </activity>
         <activity
             android:name=".StudentManagerReadStudentDetails"
-            android:exported="false" />
+            android:exported="true">
+        </activity>
         <activity
             android:name=".StudentManagerEditStudentDetails"
-            android:exported="false" />
+            android:exported="true">
+        </activity>
         <activity
             android:name=".StudentManagerAddStudent"
-            android:exported="false" />
+            android:exported="true">
+        </activity>
         <activity
             android:name=".StudentManagerDisplayStudentList"
             android:exported="false" />
         <activity
             android:name=".StudentManagerActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".timetable.TimetableManagerActivity"

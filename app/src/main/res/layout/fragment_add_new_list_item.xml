@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:backgroundTint="@color/btn_backgroundcolor"
-            android:text="@string/add_new_slot" />
+            android:text="@string/add_new_slot"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
 </FrameLayout>

@@ -27,7 +27,6 @@
     <string name="descriptionStudentList">Looks like you don\'t have any members, Get started by adding one</string>
     <string name="addOneBtton">Add One</string>
     <string name="topic2_student_list">Student List</string>
-    <string name="vertical_ellipsis">&#8942;  </string>
     <string name="AddMemberButton">Add New +</string>
     <string name="AddStudentTopic">Add Student Details</string>
     <string name="StudentManagerAddFIrstName">First Name</string>
@@ -62,4 +61,6 @@
     <string name="StudentManagerDeleteS3">Shara Chanmini</string>
     <string name="StudentManagerDeleteS4">Chamina Sewwandi</string>
     <string name="StudentManagerDeleteBtn">Delete</string>
+    <string name="manage_timeslot_title">Manage timeslots in the time table</string>
+    <string name="timeslot_manager_title">Manage time slots in timetable</string>
 </resources>
