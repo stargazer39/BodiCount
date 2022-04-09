@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -58,10 +59,18 @@ public class TimeslotAdaptor extends BaseAdapter {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(ctx,TimeslotEditActivity.class);
-//                ctx.startActivity(intent);
-//                Log.d("Timeslots", "Onclicktriggered");
                 PopupMenu popupMenu = new PopupMenu(ctx, view);
+
+                // Add menu item click listener
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        Intent intent = new Intent(ctx,TimeslotEditActivity.class);
+                        ctx.startActivity(intent);
+                        Log.d("Timeslots", "Onclicktriggered");
+                        return true;
+                    }
+                });
                 popupMenu.inflate(R.menu.timeslot_option_overflow_menu);
                 popupMenu.show();
             }

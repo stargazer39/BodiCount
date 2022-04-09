@@ -8,10 +8,12 @@
 
     <SearchView
         android:id="@+id/searchView2"
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
+        android:layout_width="381dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/search_border"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,8 +55,10 @@
             android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/btn_backgroundcolor"
             android:clickable="true"
-            android:text="@string/StudentManagerDeleteBtn" />
+            android:text="@string/StudentManagerDeleteBtn"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <TextView

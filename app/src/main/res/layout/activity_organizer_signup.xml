@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".organizer.OrganizerLoginActivity">
+    tools:context=".organizer.OrganizerSignUpActivity">
 
     <TextView
         android:id="@+id/textView8"
@@ -20,7 +20,7 @@
         android:id="@+id/imageView2"
         android:layout_width="272dp"
         android:layout_height="179dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
         app:srcCompat="@drawable/logo_transparent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/orgFirstNameSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -48,10 +48,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/orgFirstNameSignUp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/orgLastNameSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -71,10 +71,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/orgLastNameSignUp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/orgEmailSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -94,10 +94,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/orgEmailSignUp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/orgPasswordSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -117,10 +117,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/orgPasswordSignUp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/orgPasswordReSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -137,10 +137,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/btn_backgroundcolor"
+        android:onClick="onClickSignUpBtn"
         android:text="@string/organizer_signup_btn"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/orgPasswordReSignUp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
