@@ -3,6 +3,8 @@ package com.bodicount.organizer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -38,6 +40,7 @@ public class OrganizerSignUpActivity extends AppCompatActivity {
 
         FirebaseUser user = mAuth.getCurrentUser();
         db = FirebaseFirestore.getInstance();
+
         if(user != null) {
             showToast("You are already logged in.", Toast.LENGTH_LONG);
             // TODO - Redirect user to login activity
@@ -51,35 +54,28 @@ public class OrganizerSignUpActivity extends AppCompatActivity {
     }
 
     public void onClickSignUpBtn(View view) {
-        String f_name;
-        String l_name;
-        String email;
-        String password;
+        OrganizerSignUpActivity that = this;
+        Organizer organizer = new Organizer();
         String re_password;
 
         // Sign up the user
         try {
-            f_name = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgFirstNameSignUp), true, "First Name");
-            l_name = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgLastNameSignUp), true, "Last Name");
-            email = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgEmailSignUp), true, "Email");
-            password = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgPasswordSignUp), false, "Password");
+            organizer.setfName(Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgFirstNameSignUp), true, "First Name"));
+            organizer.setlName(Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgLastNameSignUp), true, "Last Name"));
+            organizer.setEmail(Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgEmailSignUp), true, "Email"));
+            organizer.setPassword(Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgPasswordSignUp), false, "Password"));
             re_password = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgPasswordReSignUp), false, "Repeat Password");
         }catch (Exception e){
             showToast(e.getMessage(), Toast.LENGTH_SHORT);
             return;
         }
 
-        if(password.compareTo(re_password) != 0){
+        if(re_password.compareTo(organizer.getPassword()) != 0){
             showToast("Passwords should Match", Toast.LENGTH_SHORT);
             return;
         }
         // Database document
-        Map<String, Object> db_user = new HashMap<>();
-        db_user.put("f_name", f_name);
-        db_user.put("l_name", l_name);
-        db_user.put("email", email);
-
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.createUserWithEmailAndPassword(organizer.getEmail(), organizer.getPassword())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -97,12 +93,14 @@ public class OrganizerSignUpActivity extends AppCompatActivity {
                             try{
                                 db.collection("user")
                                         .document(user.getUid())
-                                        .set(db_user)
+                                        .set(organizer)
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful()) {
                                                     showToast("Sign-up success", Toast.LENGTH_SHORT);
+                                                    Intent intent = new Intent(that, OrganizerLogin.class);
+                                                    startActivity(intent);
                                                 }else {
                                                     user.delete();
                                                     showToast("Sign-up failed", Toast.LENGTH_SHORT);

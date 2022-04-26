@@ -63,4 +63,8 @@
     <string name="StudentManagerDeleteBtn">Delete</string>
     <string name="manage_timeslot_title">Manage timeslots in the time table</string>
     <string name="timeslot_manager_title">Manage time slots in timetable</string>
+    <string name="emailHInt">Email</string>
+    <string name="organizerLoginTitle">Organizer Login</string>
+    <string name="Login">organizerLogin</string>
+    <string name="login">Login</string>
 </resources>
