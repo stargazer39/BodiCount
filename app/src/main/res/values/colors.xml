@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="btn_backgroundcolor">#F44336</color>
     <color name="StudentManagerBtnColor">#F44336</color>
+    <color name="deletebtn_backgroundcolor">#FF0000</color>
 </resources>

@@ -12,14 +12,21 @@
         <activity
             android:name=".organizer.OrganizerLogin"
             android:exported="false" />
+        
+        <activity  
+            android:name=".Organizer_Student_Login"
+            android:exported="true" />
+
         <activity
             android:name=".organizer.OrganizerSignUpActivity"
             android:exported="true">
+        
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".timeslot.TimeslotEditActivity"
@@ -48,6 +55,26 @@
         <activity
             android:name=".timetable.TimetableManagerActivity"
             android:exported="true" />
+        <activity
+            android:name=".Attendance_Marking"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Attendance_user_profile_edit"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Attendance_User_Profile"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Attendance_homepage"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Attendance_Student_Signup"
+            android:exported="true"></activity>
+        <activity
+            android:name=".AttendanceManagerActivity"
+            android:exported="true"></activity>
+     
         <activity
             android:name=".MainActivity"
             android:exported="true" />
