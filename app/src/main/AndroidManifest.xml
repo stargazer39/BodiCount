@@ -10,11 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BodiCount">
         <activity
-            android:name=".Attendance_Marking"
+            android:name=".Organizer_Student_Login"
             android:exported="true" >
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
+        <activity
+            android:name=".Attendance_Marking"
+            android:exported="true"></activity>
         <activity
             android:name=".Attendance_user_profile_edit"
             android:exported="true">
@@ -22,31 +30,16 @@
         </activity>
         <activity
             android:name=".Attendance_User_Profile"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".Attendance_homepage"
-            android:exported="true" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".Attendance_Student_Signup"
-            android:exported="true">
-
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".AttendanceManagerActivity"
-            android:exported="true" >
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true" />
