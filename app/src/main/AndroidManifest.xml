@@ -28,6 +28,10 @@
             </intent-filter>
 
         </activity>
+        <activity 
+            android:name=".Organizer_Student_Login"
+            android:exported="true" />
+
         <activity
             android:name=".timeslot.TimeslotEditActivity"
             android:exported="false" />
