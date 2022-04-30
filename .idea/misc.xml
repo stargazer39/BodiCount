@@ -31,6 +31,13 @@
         <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/menu/activity_main_drawer.xml" value="0.2546875" />
         <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/menu/timeslot_option_overflow_menu.xml" value="0.18" />
         <entry key="..\:/Users/StargazeR/AndroidStudioProjects/BodiCount/app/src/main/res/menu/timetable.xml" value="0.2546875" />
+        <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_attendance_homepage.xml" value="0.4" />
+        <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_attendance_manager.xml" value="0.33" />
+        <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_attendance_marking.xml" value="0.4" />
+        <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_attendance_student_signup.xml" value="0.4" />
+        <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_attendance_user_profile.xml" value="0.33229166666666665" />
+        <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_attendance_user_profile_edit.xml" value="0.36" />
+        <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_organizer_student_login.xml" value="0.44000000000000006" />
       </map>
     </option>
   </component>
