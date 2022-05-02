@@ -67,7 +67,7 @@
     <string name="organizerLoginTitle">Organizer Login</string>
     <string name="Login">organizerLogin</string>
     <string name="login">Login</string>
-     <string name="student_login">Student Login</string>
+    <string name="student_login">Student Login</string>
     <string name="student_login_btn">Login</string>
     <string name="student_login_email">Email</string>
     <string name="student_login_password">Password</string>
@@ -107,6 +107,6 @@
     <string name="attendance_refrestbtn">Refresh Location</string>
     <string name="organizer_student_orgbtn">Login as a Organizer</string>
     <string name="Organizer_student_studbtn">Login as a Student</string>
-    <string name="organizer_student_signup" >Or Sign Up </string>
-    <string name="organizer_student_here" > <u>here</u></string>
+    <string name="organizer_student_signup">Or Sign Up </string>
+    <string name="organizer_student_here"> <u>here</u></string>
 </resources>

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.bodicount.Helpers4Dehemi;
 import com.bodicount.R;
+import com.bodicount.timetable.TimetableManagerActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class OrganizerLogin extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    private boolean restarted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +31,12 @@ public class OrganizerLogin extends AppCompatActivity {
         setContentView(R.layout.activity_organizer_login);
 
         mAuth = FirebaseAuth.getInstance();
+
         FirebaseUser user = mAuth.getCurrentUser();
 
-        if(user == null){
-            Intent intent = new Intent(this, OrganizerSignUpActivity.class);
+        if(user != null){
+            showToast("You are already logged in.", Toast.LENGTH_SHORT);
+            Intent intent = new Intent(this, TimetableManagerActivity.class);
             startActivity(intent);
             return;
         }
@@ -43,29 +47,39 @@ public class OrganizerLogin extends AppCompatActivity {
         String password = "";
 
         try{
-            email = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgEmailSignUp),true, "Email");
-            password = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgPasswordSignUp), false, "Password");
+            email = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgEmailLogin),true, "Email");
+            password = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgPasswordLogin), false, "Password");
         }catch(Exception e){
+            e.printStackTrace();
             showToast("Authentication failed.",
+                    Toast.LENGTH_SHORT);
+            return;
+        }
+
+        OrganizerLogin that = this;
+        try{
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                showToast("Login Success", Toast.LENGTH_SHORT);
+                                startActivity(new Intent(that, TimetableManagerActivity.class));
+                            }else{
+                                showToast("Login Failed", Toast.LENGTH_SHORT);
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    showToast("Login Failed", Toast.LENGTH_SHORT);
+                }
+            });
+        }catch (Exception e){
+            showToast("Authentication failed. No internet?",
                     Toast.LENGTH_SHORT);
         }
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            showToast("Login Success", Toast.LENGTH_SHORT);
-                        }else{
-                            showToast("Login Failed", Toast.LENGTH_SHORT);
-                        }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                showToast("Login Failed", Toast.LENGTH_SHORT);
-            }
-        });
     }
 
     private void showToast(String message, int duration){
