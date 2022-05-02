@@ -23,6 +23,7 @@
         android:layout_height="82dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/btn_backgroundcolor"
+        android:onClick="organizerLogin"
         android:text="@string/organizer_student_orgbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -36,6 +37,7 @@
         android:layout_height="82dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="#0CB4A3"
+        android:onClick="studentLogin"
         android:text="@string/Organizer_student_studbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -74,6 +76,7 @@
             android:id="@+id/textView26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="organizerSignUp"
             android:text="@string/organizer_student_here"
             android:textColor="#3F51B5" />
     </LinearLayout>

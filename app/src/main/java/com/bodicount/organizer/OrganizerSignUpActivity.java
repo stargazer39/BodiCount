@@ -3,7 +3,6 @@ package com.bodicount.organizer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,18 +12,14 @@ import android.widget.Toast;
 
 import com.bodicount.Helpers4Dehemi;
 import com.bodicount.R;
+import com.bodicount.timetable.TimetableManagerActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class OrganizerSignUpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -43,7 +38,8 @@ public class OrganizerSignUpActivity extends AppCompatActivity {
 
         if(user != null) {
             showToast("You are already logged in.", Toast.LENGTH_LONG);
-            // TODO - Redirect user to login activity
+            Intent intent = new Intent(this, TimetableManagerActivity.class);
+            startActivity(intent);
             return;
         }
     }

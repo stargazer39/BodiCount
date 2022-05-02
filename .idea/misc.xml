@@ -63,13 +63,46 @@
         <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_student_manager_read_student_details.xml" value="0.3375" />
         <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/fragment_add_new_list_item.xml" value="0.3375" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_login.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_homepage.xml" value="0.25" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_manager.xml" value="0.25" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_marking.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_student_signup.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_user_profile.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_user_profile_edit.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_main.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_login.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_signup.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_student_login.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_add_student.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_delete.xml" value="0.25" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_display_student_list.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_edit_student_details.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_read_student_details.xml" value="0.25" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_time_slot_manager.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_timeslot_edit.xml" value="0.25" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_timetable_manager.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_timetable_manager2.xml" value="0.29736842105263156" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/fragment_add_new_list_item.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/fragment_time_slot.xml" value="0.75" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/simple_input_dialog_fragment.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/time_slot.xml" value="0.1" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/timeslot_addnew_frament.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/timetable_fragment.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/menu/timeslot_option_overflow_menu.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/menu/timetable_options_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="SwUserDefinedSpecifications">
+    <option name="specTypeByUrl">
+      <map />
+    </option>
   </component>
 </project>

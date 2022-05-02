@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
@@ -47,7 +46,7 @@ public class TimeslotAdaptor extends BaseAdapter {
             }
 
             view = LayoutInflater.from(this.ctx).
-                    inflate(R.layout.fragment_time_slot, viewGroup, false);
+                    inflate(R.layout.time_slot, viewGroup, false);
         }
 
         String currentItem = (String) getItem(i);
