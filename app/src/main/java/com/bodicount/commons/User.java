@@ -6,6 +6,9 @@ public abstract  class User {
     private String email;
     private String password;
     protected String type;
+    private String phone;
+    private String gender;
+    private String dob;
 
     public String getfName() {
         return fName;
@@ -39,6 +42,17 @@ public abstract  class User {
         this.password = password;
     }
 
+    public String getPhone() { return phone; }
+
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public String getGender() { return gender; }
+
+    public void setGender(String gender) { this.gender = gender; }
+
+    public String getDob() { return dob; }
+
+    public void setDob(String dob) { this.dob = dob; }
 
     abstract public String getType();
 }
