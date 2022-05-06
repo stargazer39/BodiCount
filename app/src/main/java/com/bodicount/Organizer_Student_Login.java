@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.bodicount.organizer.OrganizerLogin;
 import com.bodicount.organizer.OrganizerSignUpActivity;
+import com.bodicount.student.Attendance_Student_Login;
 
 public class Organizer_Student_Login extends AppCompatActivity {
 
@@ -18,7 +19,8 @@ public class Organizer_Student_Login extends AppCompatActivity {
     }
 
     public void studentLogin(View view) {
-
+        Intent intent = new Intent(this, Attendance_Student_Login.class);
+        startActivity(intent);
     }
 
     public void organizerLogin(View view) {
