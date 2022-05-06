@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".timetable.TimetableManagerActivity"
             android:exported="false" />
@@ -27,9 +27,6 @@
         <activity
             android:name=".organizer.OrganizerSignUpActivity"
             android:exported="true"></activity>
-        <activity
-            android:name=".timeslot.TimeslotEditActivity"
-            android:exported="false" />
         <activity
             android:name=".timeslot.TimeSlotManagerActivity"
             android:exported="true" />

@@ -7,16 +7,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bodicount.Helpers4Dehemi;
 import com.bodicount.R;
+import com.bodicount.timeslot.TimeSlotManagerActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,13 +35,14 @@ public class TimetableManagerActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private RecyclerView timetableList;
+    public final static String TIMETABLE_ID = "timetableId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timetable_manager2);
+        setContentView(R.layout.activity_timetable_manager);
 
-        timetableList = (RecyclerView)  findViewById(R.id.timeTableList2);
+        timetableList = (RecyclerView)  findViewById(R.id.timeSlotList);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
@@ -80,17 +84,31 @@ public class TimetableManagerActivity extends AppCompatActivity {
     }
 
     public void setData(List<Timetable> data){
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.addNewTimetable);
+        TimetableManagerActivity that = this;
+
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.addNewTimeslot);
+        Button addButton = (Button) findViewById(R.id.addTImetableBtn2);
+
         if(data.size() > 0){
             linearLayout.setVisibility(View.INVISIBLE);
+            addButton.setVisibility(View.VISIBLE);
         }else{
             linearLayout.setVisibility(View.VISIBLE);
+            addButton.setVisibility(View.INVISIBLE);
         }
 
-        TimetableAdaptor adaptor = new TimetableAdaptor(data, mAuth, db, new TimetableOnEventRefreshHandler() {
+        TimetableAdaptor adaptor = new TimetableAdaptor(data, mAuth, db, new OnEventHandler() {
             @Override
             public void onEvent() {
                 refeshView();
+            }
+
+            @Override
+            public void editTimeslots(String tableId) {
+                Intent intent = new Intent(that, TimeSlotManagerActivity.class);
+                intent.putExtra(TIMETABLE_ID, tableId);
+                startActivity(intent);
+                that.showToast("Hello",Toast.LENGTH_SHORT);
             }
         });
 
@@ -122,7 +140,7 @@ public class TimetableManagerActivity extends AppCompatActivity {
                 // Add to the database
                 try{
                     Timetable timetable = new Timetable();
-                    timetable.setSubject(subject);
+                    timetable.setTableName(subject);
 
                     FirebaseUser user = mAuth.getCurrentUser();
 
@@ -135,12 +153,12 @@ public class TimetableManagerActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        showToast("Added table " + timetable.getSubject(), Toast.LENGTH_SHORT);
+                                        showToast("Added table " + timetable.getTableName(), Toast.LENGTH_SHORT);
                                         refeshView();
                                         dialog.cancel();
                                     }else{
                                         task.getException().printStackTrace();
-                                        showToast("Failed to add table " + timetable.getSubject(), Toast.LENGTH_SHORT);
+                                        showToast("Failed to add table " + timetable.getTableName(), Toast.LENGTH_SHORT);
                                         dialog.cancel();
                                     }
                                 }

@@ -7,7 +7,7 @@
     tools:context=".timetable.TimetableManagerActivity">
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/addTImetableBtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -19,10 +19,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeTableList2" />
+        app:layout_constraintTop_toBottomOf="@+id/timeSlotList" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/timeTableList2"
+        android:id="@+id/timeSlotList"
         android:layout_width="386dp"
         android:layout_height="496dp"
         android:layout_marginTop="128dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/addNewTimetable"
+        android:id="@+id/addNewTimeslot"
         android:layout_width="409dp"
         android:layout_height="140dp"
         android:layout_marginTop="52dp"
@@ -51,12 +51,13 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button14"
+            android:id="@+id/addTImeslotBtn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="@color/btn_backgroundcolor"
             android:gravity="center"
+            android:onClick="addTimetable"
             android:text="Add"
             app:icon="@drawable/ic_baseline_add_24" />
 

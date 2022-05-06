@@ -17,18 +17,15 @@
         <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
         <item name="colorSurface">#FFFFFF</item>
     </style>
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
-        <item name="colorPrimary">#FFF</item>
-        <item name="colorPrimaryDark">#FFFF</item>
-        <item name="colorAccent">@color/btn_backgroundcolor</item>
 
-        <item name="materialCalendarFullscreenTheme">
-            @style/CustomThemeOverlay_MaterialCalendar_Fullscreen
-        </item>
-    </style>
-
-    <style name="CustomThemeOverlay_MaterialCalendar_Fullscreen" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen">
-        <item name="materialCalendarStyle">@style/Custom_MaterialCalendar.Fullscreen</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#6C6C6C</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#F44336</item>
+=
+        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
     </style>
 
     <style name="Custom_MaterialCalendar.Fullscreen" parent="@style/Widget.MaterialComponents.MaterialCalendar.Fullscreen">

@@ -1,13 +1,13 @@
 package com.bodicount.timetable;
 
 public class Timetable {
-    private String subject;
+    private String tableName;
 
-    public String getSubject() {
-        return subject;
+    public String getTableName() {
+        return tableName;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
     }
 }
