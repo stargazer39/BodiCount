@@ -1,8 +1,10 @@
-package com.bodicount;
+package com.bodicount.student;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.bodicount.R;
 
 public class Attendance_user_profile_edit extends AppCompatActivity {
 
