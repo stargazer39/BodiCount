@@ -31,11 +31,13 @@ public class Attendance_Student_Login extends AppCompatActivity {
         sAuth = FirebaseAuth.getInstance();
         FirebaseUser user = sAuth.getCurrentUser();
 
-        if(user == null){
-            Intent intent = new Intent(this, Attendance_Student_Signup.class);
+        if(user != null){
+            Intent intent = new Intent(this, Attendance_homepage.class);
+            showToast("Login Success", Toast.LENGTH_SHORT);
             startActivity(intent);
             return;
         }
+
     }
 
     public void login(View view) {
@@ -50,14 +52,16 @@ public class Attendance_Student_Login extends AppCompatActivity {
                     Toast.LENGTH_SHORT);
         }
 
+        Attendance_Student_Login that = this;
+
         sAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             showToast("Login Success", Toast.LENGTH_SHORT);
-//                            Intent intent = new Intent(that, Attendance_homepage.class);
-//                            startActivity(intent);
+                            Intent intent = new Intent(that, Attendance_homepage.class);
+                            startActivity(intent);
                         }else{
                             showToast("Login Failed", Toast.LENGTH_SHORT);
                         }

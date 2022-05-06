@@ -18,6 +18,7 @@
         <activity
             android:name=".Organizer_Student_Login"
             android:exported="true">
+        
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,19 +53,19 @@
             android:name=".Attendance_Marking"
             android:exported="true" />
         <activity
-            android:name=".Attendance_user_profile_edit"
+            android:name=".student.Attendance_user_profile_edit"
             android:exported="true"></activity>
         <activity
-            android:name=".Attendance_User_Profile"
+            android:name=".student.Attendance_User_Profile"
             android:exported="true" />
         <activity
             android:name=".Attendance_homepage"
             android:exported="true" />
         <activity
-            android:name=".Attendance_Student_Signup"
+            android:name=".student.Attendance_Student_Signup"
             android:exported="true" />
         <activity
-            android:name=".AttendanceManagerActivity"
+            android:name=".student.Attendance_Student_Login"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
