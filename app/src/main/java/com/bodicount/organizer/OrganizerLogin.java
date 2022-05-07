@@ -36,7 +36,7 @@ public class OrganizerLogin extends AppCompatActivity {
 
         if(user != null){
             showToast("You are already logged in.", Toast.LENGTH_SHORT);
-            Intent intent = new Intent(this, TimetableManagerActivity.class);
+            Intent intent = new Intent(this, OrganizerDashboard.class);
             startActivity(intent);
             return;
         }
@@ -64,7 +64,7 @@ public class OrganizerLogin extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 showToast("Login Success", Toast.LENGTH_SHORT);
-                                startActivity(new Intent(that, TimetableManagerActivity.class));
+                                startActivity(new Intent(that, OrganizerDashboard.class));
                             }else{
                                 showToast("Login Failed", Toast.LENGTH_SHORT);
                             }
