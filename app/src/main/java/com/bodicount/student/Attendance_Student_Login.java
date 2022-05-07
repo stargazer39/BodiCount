@@ -74,6 +74,11 @@ public class Attendance_Student_Login extends AppCompatActivity {
         });
     }
 
+    public void redirectToSignUp(View view){
+        Intent intent = new Intent(this, Attendance_Student_Signup.class);
+        startActivity(intent);
+    }
+
     private void showToast(String message, int duration){
         Toast toast = Toast.makeText(this, message, duration);
         toast.show();
