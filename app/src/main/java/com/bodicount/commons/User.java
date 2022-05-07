@@ -1,5 +1,7 @@
 package com.bodicount.commons;
 
+import com.google.firebase.firestore.Exclude;
+
 public abstract  class User {
     private String fName;
     private String lName;
@@ -9,6 +11,9 @@ public abstract  class User {
     private String phone;
     private String gender;
     private String dob;
+
+    @Exclude
+    private String id;
 
     public String getfName() {
         return fName;
@@ -55,4 +60,16 @@ public abstract  class User {
     public void setDob(String dob) { this.dob = dob; }
 
     abstract public String getType();
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getFullName() {
+        return fName + " " + lName;
+    }
 }
