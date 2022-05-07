@@ -22,4 +22,8 @@ public class Helpers4Dehemi {
         String str = editText.getText().toString();
         return vaildateString(str, trim, tag);
     }
+
+    public static long convertToMillis(int hour, int minute){
+        return  (hour*60*60 + minute*60)*1000;
+    }
 }

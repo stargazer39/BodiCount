@@ -21,6 +21,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -40,6 +41,13 @@ dependencies {
 
     // Firestore
     implementation 'com.google.firebase:firebase-firestore'
+
+    // QR code stuff
+/*    implementation 'com.github.kenglxn.QRGen:android:2.6.0'*/
+    implementation 'com.google.zxing:core:3.4.1'
+
+    // Time stuff
+    implementation 'net.danlew:android.joda:2.10.14'
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'

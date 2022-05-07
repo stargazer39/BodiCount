@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".organizer.OrganizerStudentSubscribe"
+            android:exported="false" />
+        <activity
+            android:name=".organizer.OrganizerDashboard"
+            android:exported="false" />
+        <activity
             android:name=".timetable.TimetableManagerActivity"
             android:exported="false" />
         <activity
@@ -18,7 +24,6 @@
         <activity
             android:name=".Organizer_Student_Login"
             android:exported="true">
-        
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +32,7 @@
         </activity>
         <activity
             android:name=".organizer.OrganizerSignUpActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".timeslot.TimeSlotManagerActivity"
             android:exported="true" />
@@ -54,7 +59,7 @@
             android:exported="true" />
         <activity
             android:name=".student.Attendance_user_profile_edit"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".student.Attendance_User_Profile"
             android:exported="true" />
