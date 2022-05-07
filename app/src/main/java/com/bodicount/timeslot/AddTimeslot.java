@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,9 +16,10 @@ import androidx.fragment.app.DialogFragment;
 
 import com.bodicount.Helpers4Dehemi;
 import com.bodicount.R;
-import com.bodicount.commons.TimeDuration;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
+
+import org.joda.time.LocalTime;
 
 public class AddTimeslot extends DialogFragment {
     private OnTimeSlotSetHandler handler;
@@ -26,7 +29,9 @@ public class AddTimeslot extends DialogFragment {
         this.handler = handler;
     }
 
-
+    private TextView startTime;
+    private TextView endTime;
+    private Switch online;
 
     @Nullable
     @Override
@@ -73,9 +78,15 @@ public class AddTimeslot extends DialogFragment {
                 }
 
                 currentEditedTimeslot.setSlotName(slotName);
+                currentEditedTimeslot.setHeldOnline(online.isChecked());
+
                 handler.onTimeSlotAdd(currentEditedTimeslot);
             }
         });
+
+        startTime = (TextView) view.findViewById(R.id.timeSlotStartTime);
+        endTime = (TextView) view.findViewById(R.id.timeSlotEndTime);
+        online = (Switch) view.findViewById(R.id.onlineSwitch);
 
         return view;
     }
@@ -95,8 +106,10 @@ public class AddTimeslot extends DialogFragment {
         picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text = new TimeDuration(picker.getHour(), picker.getMinute()).toString();
-                currentEditedTimeslot.setStartTime(text);
+                LocalTime time = LocalTime.fromMillisOfDay(Helpers4Dehemi.convertToMillis(picker.getHour(), picker.getMinute()));
+                currentEditedTimeslot.setStartTime(time.toString());
+
+                startTime.setText(time.toString());
             }
         });
 
@@ -113,8 +126,10 @@ public class AddTimeslot extends DialogFragment {
         picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text = new TimeDuration(picker.getHour(), picker.getMinute()).toString();
-                currentEditedTimeslot.setEndTime(text);
+                LocalTime time = LocalTime.fromMillisOfDay(Helpers4Dehemi.convertToMillis(picker.getHour(), picker.getMinute()));
+                currentEditedTimeslot.setEndTime(time.toString());
+
+                endTime.setText(time.toString());
             }
         });
 

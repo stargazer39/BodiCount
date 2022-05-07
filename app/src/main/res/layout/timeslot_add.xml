@@ -25,7 +25,7 @@
             android:text="@string/timetable_from" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/timeSlotStartTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -63,7 +63,7 @@
             android:text="@string/timetable_to" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/timeSlotEndTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -82,7 +82,7 @@
     </LinearLayout>
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/onlineSwitch"
         android:layout_width="293dp"
         android:layout_height="29dp"
         android:layout_marginHorizontal="20dp"
@@ -101,7 +101,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1">
+        app:layout_constraintTop_toBottomOf="@+id/onlineSwitch">
 
         <Button
             android:id="@+id/timeslotAddOk"

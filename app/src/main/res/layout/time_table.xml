@@ -17,7 +17,7 @@
         android:background="@drawable/slot_border">
 
         <TextView
-            android:id="@+id/timeslot_name"
+            android:id="@+id/student_row_name"
             android:padding="20dp"
             android:focusable="false"
             android:layout_width="0dp"

@@ -18,7 +18,7 @@
         <item name="colorSurface">#FFFFFF</item>
     </style>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">#6C6C6C</item>
         <item name="colorPrimaryDark">#000000</item>
         <item name="colorAccent">#F44336</item>

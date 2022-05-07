@@ -3,9 +3,10 @@ package com.bodicount.timeslot;
 import com.google.type.DateTime;
 
 public class Timeslot {
+    private String slotName;
     private String startTime;
     private String endTime;
-    private String slotName;
+    private boolean heldOnline;
 
     public String getStartTime() {
         return startTime;
@@ -29,5 +30,13 @@ public class Timeslot {
 
     public void setSlotName(String slotName) {
         this.slotName = slotName;
+    }
+
+    public boolean isHeldOnline() {
+        return heldOnline;
+    }
+
+    public void setHeldOnline(boolean heldOnline) {
+        this.heldOnline = heldOnline;
     }
 }

@@ -47,7 +47,7 @@ public class TimetableAdaptor extends RecyclerView.Adapter<TimetableAdaptor.View
                 }
             });
 
-            textView = (TextView) view.findViewById(R.id.timeslot_name);
+            textView = (TextView) view.findViewById(R.id.student_row_name);
             TextView editButton = (TextView) view.findViewById(R.id.edit_time_slot);
 
             editButton.setOnClickListener(new View.OnClickListener() {

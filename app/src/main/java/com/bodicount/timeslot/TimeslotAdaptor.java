@@ -22,6 +22,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.joda.time.LocalTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import java.util.List;
 import java.util.Locale;
 
@@ -43,14 +47,17 @@ public class TimeslotAdaptor extends RecyclerView.Adapter<TimeslotAdaptor.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView textView;
         private Timeslot timeslot = null;
+        private TextView timeSlot;
+        private TextView editButton;
 
         public ViewHolder(View view) {
             super(view);
             Context ctx = view.getContext();
             // Define click listener for the ViewHolder's View
 
-            textView = (TextView) view.findViewById(R.id.timeslot_name);
-            TextView editButton = (TextView) view.findViewById(R.id.edit_time_slot);
+            textView = (TextView) view.findViewById(R.id.student_row_name);
+            editButton = (TextView) view.findViewById(R.id.edit_time_slot);
+            timeSlot = (TextView) view.findViewById(R.id.timeslot_time);
 
             editButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -81,6 +88,15 @@ public class TimeslotAdaptor extends RecyclerView.Adapter<TimeslotAdaptor.ViewHo
 
         public void setTimeSlot(Timeslot t){
             this.timeslot = t;
+            try{
+                LocalTime sTime = LocalTime.parse(timeslot.getStartTime());
+                LocalTime eTime = LocalTime.parse(timeslot.getEndTime());
+                DateTimeFormatter formatter = DateTimeFormat.forPattern("hh:mm");
+
+                timeSlot.setText("From - " + sTime.toString(formatter) + " To " + eTime.toString(formatter).toString());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
 
         public void removeTimeslot(Context ctx) {
