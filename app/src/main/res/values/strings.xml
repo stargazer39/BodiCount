@@ -133,4 +133,6 @@
     <string name="deletee">Delete</string>
     <string name="orga">Organic Chemistry</string>
     <string name="Unsubscribe">Unsubscribe from Organization ?</string>
+    <string name="studentNotes">Notes</string>
+    <string name="studentProfile">Profile</string>
 </resources>
