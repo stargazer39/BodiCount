@@ -95,7 +95,7 @@ public class Attendance_Student_Signup extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful()) {
                                                     showToast("Sign-up success", Toast.LENGTH_SHORT);
-                                                    Intent intent = new Intent(that, Attendance_homepage.class);
+                                                    Intent intent = new Intent(that, StudentOrganiserSubscribe.class);
                                                     startActivity(intent);
                                                 }else {
                                                     user.delete();
@@ -123,5 +123,6 @@ public class Attendance_Student_Signup extends AppCompatActivity {
                     }
                 });
     }
+
 
 }

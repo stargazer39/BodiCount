@@ -86,7 +86,7 @@
     <string name="homepage_ongoingbtn3">Physics  From - 8.30AM to 10.30AM</string>
     <string name="userprofile_user_name">John Smith</string>
     <string name="userprofile_user_age">21 years old</string>
-    <string name="userprofile_deletebtn">Delete Account</string>
+    <string name="userprofile_deletebtn">Unsubscribe</string>
     <string name="userprofile_editbtn">Edit Profile</string>
     <string name="userprofile_email">johnsmith@gmail.com</string>
     <string name="userprofile_phonenumber">+94 70123456</string>
@@ -132,4 +132,5 @@
     <string name="Editt">Edit</string>
     <string name="deletee">Delete</string>
     <string name="orga">Organic Chemistry</string>
+    <string name="Unsubscribe">Unsubscribe from Organization ?</string>
 </resources>
