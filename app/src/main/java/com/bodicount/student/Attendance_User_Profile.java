@@ -1,8 +1,13 @@
 package com.bodicount.student;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.bodicount.Helpers4Nithula;
@@ -12,23 +17,34 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Locale;
+
 public class Attendance_User_Profile extends AppCompatActivity {
 
+//    private static final String TAG = Deleted;
     private FirebaseAuth sAuth;
     private FirebaseUser user;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance_user_profile);
+        sAuth = FirebaseAuth.getInstance();
+        user = sAuth.getCurrentUser();
+
+        if(user == null){
+            Intent intent = new Intent(this,Attendance_Student_Login.class);
+            startActivity(intent);
+        }
+        db = FirebaseFirestore.getInstance();
         getData();
     }
 
 
     private void getData(){
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        sAuth = FirebaseAuth.getInstance();
-        user = sAuth.getCurrentUser();
+
+
 
 //        Attendance_User_Profile that = this;
 
@@ -63,4 +79,32 @@ public class Attendance_User_Profile extends AppCompatActivity {
         });
     }
 
-} // rUN KRLA BALANNA OONE BNS tell when you done
+
+
+    public void deleteData(View view){
+//        FirebaseFirestore db = FirebaseFirestore.getInstance();
+//        sAuth = FirebaseAuth.getInstance();
+//        user = sAuth.getCurrentUser();
+
+//        new AlertDialog.Builder(getApplicationContext())
+//                .setTitle("Delete Account".toUpperCase(Locale.ROOT))
+//                .setMessage("Do you really want to delete your account?")
+//                .setIcon(android.R.drawable.ic_dialog_alert)
+//                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener()
+        db.collection("user").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .delete().addOnCompleteListener(task -> {
+
+                    if(task.isSuccessful()){
+//
+//                        Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                    }
+        });
+
+    }
+
+    public void goToEdit(View view){
+        Intent intent = new Intent(this , Attendance_user_profile_edit.class);
+        startActivity(intent);
+    }
+
+}
