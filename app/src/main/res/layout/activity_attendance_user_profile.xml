@@ -26,7 +26,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
         tools:text="@string/userprofile_user_name" />
 
     <TextView
@@ -76,20 +76,6 @@
         app:layout_constraintTop_toBottomOf="@+id/userProfileAge"
         tools:text="@string/userprofile_gender" />
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="39dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="272dp"
-        android:layout_marginEnd="100dp"
-        android:backgroundTint="@color/btn_backgroundcolor"
-        android:onClick="goToEdit"
-        app:icon="@drawable/ic_baseline_edit_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
     <LinearLayout
         android:layout_width="407dp"
         android:layout_height="61dp"
@@ -123,5 +109,30 @@
             app:rippleColor="#F44336" />
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/StudentManagerBtnColor"
+        android:onClick="logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_login_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/StudentManagerBtnColor"
+        android:onClick="goToEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toEndOf="@+id/userProfile_name"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/ic_baseline_edit_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
