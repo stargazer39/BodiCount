@@ -10,7 +10,7 @@
         android:id="@+id/textView11"
         android:layout_width="235dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:text="@string/StudentManagerEditStudentTopic"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/orgEmailSignUp"
+        android:id="@+id/studentFirstnameEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -66,10 +66,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orgEmailSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/studentFirstnameEdit" />
 
     <EditText
-        android:id="@+id/orgPasswordSignUp"
+        android:id="@+id/studentlastnameEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -91,10 +91,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orgPasswordSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/studentlastnameEdit" />
 
     <EditText
-        android:id="@+id/editTextPhone2"
+        android:id="@+id/studentPhoneEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -115,13 +115,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone2" />
+        app:layout_constraintTop_toBottomOf="@+id/studentPhoneEdit" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/studentEditEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:editable="false"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="@string/StudentManagerEditEmailField"
@@ -136,10 +137,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/StudentManagerBtnColor"
+        android:onClick="update"
         android:text="@string/StudentManagerEDITBtn"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/studentEditEmail" />
 </androidx.constraintlayout.widget.ConstraintLayout>
