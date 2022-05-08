@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.bodicount.student.Attendance_User_Profile;
+import com.bodicount.studentsnotes.StudentNotesManagement;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -69,5 +70,9 @@ public class Attendance_homepage extends AppCompatActivity {
 
     }
 
+    public void goToNotes(View view){
+        Intent intent = new Intent(this, StudentNotesManagement.class);
+        startActivity(intent);
+    }
 
 }

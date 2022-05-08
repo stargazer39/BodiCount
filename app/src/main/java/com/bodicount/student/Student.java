@@ -6,6 +6,8 @@ import com.bodicount.commons.UserTypes;
 public class Student extends User {
     private String organizerID;
     private String image;
+    private String timetableID;
+
     public Student () {
         super();
         this.type = UserTypes.STUDENT;
@@ -27,5 +29,13 @@ public class Student extends User {
 
     public void setOrganizerID(String organizerID) {
         this.organizerID = organizerID;
+    }
+
+    public String getTimetableID() {
+        return timetableID;
+    }
+
+    public void setTimetableID(String timetableID) {
+        this.timetableID = timetableID;
     }
 }

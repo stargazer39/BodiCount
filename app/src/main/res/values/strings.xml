@@ -46,7 +46,7 @@
     <string name="StudentManagerEditPhoneField" />
     <string name="StudentManagerEditEmail">Email Address</string>
     <string name="StudentManagerEditEmailField" />
-    <string name="StudentManagerEDITBtn">Edit Details</string>
+    <string name="StudentManagerEDITBtn">Update</string>
     <string name="StudentManagerReadFirstName">"First Name : Dilmi "</string>
     <string name="StudentManagerReadLastName">Last Name : Lakshana.</string>
     <string name="StudentManagerReadEmail">Email Address : dilmilakshana@gmail.com</string>

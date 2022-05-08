@@ -119,6 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:backgroundTint="@color/StudentManagerBtnColor"
+        android:onClick="goToNotes"
         android:text="@string/studentNotes"
         app:layout_constraintEnd_toStartOf="@+id/userProfile"
         app:layout_constraintHorizontal_bias="0.209"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/removeTimetable"
+    <item android:id="@+id/removeStudent"
         android:title="Remove" />
-    <item android:id="@+id/renameTimetable"
-        android:title="Rename" />
+    <item android:id="@+id/editSudent"
+        android:title="Edit" />
 </menu>

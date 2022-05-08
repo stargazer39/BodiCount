@@ -47,53 +47,59 @@
         <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_attendance_user_profile.xml" value="0.33229166666666665" />
         <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_attendance_user_profile_edit.xml" value="0.36" />
         <entry key="..\:/Y2S2/MAD/Bodicount/BodiCount/app/src/main/res/layout/activity_organizer_student_login.xml" value="0.44000000000000006" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout-v31/activity_attendance_homepage.xml" value="0.3182291666666667" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_attendance_homepage.xml" value="0.3875" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_attendance_manager.xml" value="0.3555253623188406" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_attendance_marking.xml" value="0.3555253623188406" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_attendance_marking_online.xml" value="0.29375" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_attendance_student_login.xml" value="0.3875" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_attendance_student_signup.xml" value="0.268" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_attendance_user_profile.xml" value="0.3375" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_attendance_user_profile_edit.xml" value="0.3824228028503563" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_main.xml" value="0.3555253623188406" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_organizer_login.xml" value="0.3555253623188406" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_organizer_signup.xml" value="0.3875" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_organizer_student_login.xml" value="0.3875" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_student_manager.xml" value="0.3555253623188406" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_student_manager_edit_student_details.xml" value="0.4" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_student_manager_read_student_details.xml" value="0.3375" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_student_notes_management.xml" value="0.132" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_student_organiser_subscribe.xml" value="0.3269927536231884" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/activity_time_slot_manager.xml" value="0.278125" />
-        <entry key="..\:/Y2S2/MAD/Project/BodiCount/app/src/main/res/layout/fragment_add_new_list_item.xml" value="0.3375" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/drawable/ic_baseline_accessibility_24.xml" value="0.2275" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2275" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/drawable/ic_baseline_copyright_24.xml" value="0.2275" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2275" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/drawable/search_border.xml" value="0.1585" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/drawable/slot_border.xml" value="0.1085" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout-v31/activity_attendance_homepage.xml" value="0.2942708333333333" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_homepage.xml" value="0.25" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_manager.xml" value="0.25" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_marking.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_marking_online.xml" value="0.1" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_student_login.xml" value="0.35280797101449274" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_student_signup.xml" value="0.33" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_user_profile.xml" value="0.18819655521783182" />
-        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_user_profile_edit.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_attendance_user_profile_edit.xml" value="0.25" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_main.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_dashboard.xml" value="0.33" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_login.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_profile.xml" value="0.33" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_signup.xml" value="0.33" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_student_login.xml" value="0.33" />
-        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager.xml" value="0.33" />
-        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_add_student.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_organizer_student_subscribe.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager.xml" value="0.1950354609929078" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_add_student.xml" value="0.25" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_delete.xml" value="0.25" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_display_student_list.xml" value="0.33" />
-        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_edit_student_details.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_edit_student_details.xml" value="0.25" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_manager_read_student_details.xml" value="0.25" />
-        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_time_slot_manager.xml" value="0.33" />
-        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_timeslot_edit.xml" value="0.25" />
-        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_timetable_manager.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_notes_management.xml" value="0.22" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_notes_user_view.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_student_organiser_subscribe.xml" value="0.5" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_students_notes_add.xml" value="0.22083333333333333" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_students_notes_edit.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_time_slot_manager.xml" value="0.25" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_timeslot_edit.xml" value="0.1391304347826087" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_timetable_manager.xml" value="0.22" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/activity_timetable_manager2.xml" value="0.29736842105263156" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/fragment_add_new_list_item.xml" value="0.18819655521783182" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/fragment_time_slot.xml" value="0.75" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/simple_input_dialog_fragment.xml" value="0.18819655521783182" />
-        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/time_slot.xml" value="0.1" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/student_add.xml" value="0.1" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/student_manager_row.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/student_note.xml" value="0.22" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/sudent.xml" value="0.1" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/time_slot.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/time_table.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/timeslot_add.xml" value="0.33" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/timeslot_addnew_frament.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/timeslot_editor.xml" value="0.1" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/layout/timetable_fragment.xml" value="0.18819655521783182" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/menu/student_manage_options_menu.xml" value="0.22083333333333333" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/menu/timeslot_option_overflow_menu.xml" value="0.33" />
+        <entry key="..\:/data/git/BodiCount/app/src/main/res/menu/timeslot_options_menu.xml" value="0.1" />
         <entry key="..\:/data/git/BodiCount/app/src/main/res/menu/timetable_options_menu.xml" value="0.1" />
       </map>
     </option>
