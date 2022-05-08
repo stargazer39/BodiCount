@@ -1,5 +1,6 @@
 package com.bodicount.timeslot;
 
+import com.google.firebase.firestore.Exclude;
 import com.google.type.DateTime;
 
 public class Timeslot {
@@ -7,6 +8,10 @@ public class Timeslot {
     private String startTime;
     private String endTime;
     private boolean heldOnline;
+    private int date;
+
+    @Exclude
+    private String id;
 
     public String getStartTime() {
         return startTime;
@@ -38,5 +43,21 @@ public class Timeslot {
 
     public void setHeldOnline(boolean heldOnline) {
         this.heldOnline = heldOnline;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
+    public void setDate(int date) {
+        this.date = date;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

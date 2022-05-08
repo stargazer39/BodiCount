@@ -78,7 +78,10 @@ public class TimeSlotManagerActivity extends AppCompatActivity {
                             List<Timeslot> timeslots = new ArrayList<>();
 
                             for(DocumentSnapshot doc : docList){
-                                timeslots.add(doc.toObject(Timeslot.class));
+                                Timeslot t = doc.toObject(Timeslot.class);
+                                t.setId(doc.getId());
+                                // System.out.println(doc.getId());
+                                timeslots.add(t);
                             }
 
                             that.setData(timeslots);
@@ -139,7 +142,7 @@ public class TimeSlotManagerActivity extends AppCompatActivity {
                     .collection("timetables")
                     .document(timetableId)
                     .collection("timeslots")
-                    .document(timeslot.getSlotName())
+                    .document()
                     .set(timeslot)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

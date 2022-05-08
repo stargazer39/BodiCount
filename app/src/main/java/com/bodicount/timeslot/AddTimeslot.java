@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,10 +21,15 @@ import com.bodicount.Helpers4Dehemi;
 import com.bodicount.R;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
+import com.google.type.Date;
+import com.google.type.DateTime;
 
+import org.joda.time.DateTimeConstants;
 import org.joda.time.LocalTime;
 
-public class AddTimeslot extends DialogFragment {
+import java.util.ArrayList;
+
+public class AddTimeslot extends DialogFragment implements AdapterView.OnItemSelectedListener {
     private OnTimeSlotSetHandler handler;
     private Timeslot currentEditedTimeslot = new Timeslot();
 
@@ -32,6 +40,8 @@ public class AddTimeslot extends DialogFragment {
     private TextView startTime;
     private TextView endTime;
     private Switch online;
+    private Spinner daysOfWeek;
+    private int currentDate;
 
     @Nullable
     @Override
@@ -79,6 +89,7 @@ public class AddTimeslot extends DialogFragment {
 
                 currentEditedTimeslot.setSlotName(slotName);
                 currentEditedTimeslot.setHeldOnline(online.isChecked());
+                currentEditedTimeslot.setDate(currentDate);
 
                 handler.onTimeSlotAdd(currentEditedTimeslot);
             }
@@ -87,7 +98,17 @@ public class AddTimeslot extends DialogFragment {
         startTime = (TextView) view.findViewById(R.id.timeSlotStartTime);
         endTime = (TextView) view.findViewById(R.id.timeSlotEndTime);
         online = (Switch) view.findViewById(R.id.onlineSwitch);
+        daysOfWeek = (Spinner) view.findViewById(R.id.daysOfWeekSpinner);
 
+        ArrayAdapter adapter
+                = new ArrayAdapter(
+                getContext(),
+                android.R.layout.simple_spinner_item,
+                Helpers4Dehemi.days);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        daysOfWeek.setOnItemSelectedListener(this);
+        daysOfWeek.setAdapter(adapter);
         return view;
     }
 
@@ -134,5 +155,14 @@ public class AddTimeslot extends DialogFragment {
         });
 
         picker.show(getChildFragmentManager(), "Time");
+    }
+
+    public void onItemSelected(AdapterView<?> parent, View view,
+                               int pos, long id) {
+        currentDate = Helpers4Dehemi.dayConstant[pos];
+    }
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback
     }
 }

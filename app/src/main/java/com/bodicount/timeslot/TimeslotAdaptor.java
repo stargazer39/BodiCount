@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bodicount.Helpers4Dehemi;
 import com.bodicount.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -49,6 +50,7 @@ public class TimeslotAdaptor extends RecyclerView.Adapter<TimeslotAdaptor.ViewHo
         private Timeslot timeslot = null;
         private TextView timeSlot;
         private TextView editButton;
+        private TextView timeslotDay;
 
         public ViewHolder(View view) {
             super(view);
@@ -58,6 +60,7 @@ public class TimeslotAdaptor extends RecyclerView.Adapter<TimeslotAdaptor.ViewHo
             textView = (TextView) view.findViewById(R.id.student_row_name);
             editButton = (TextView) view.findViewById(R.id.edit_time_slot);
             timeSlot = (TextView) view.findViewById(R.id.timeslot_time);
+            timeslotDay = (TextView) view.findViewById(R.id.timeslot_to);
 
             editButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -76,7 +79,7 @@ public class TimeslotAdaptor extends RecyclerView.Adapter<TimeslotAdaptor.ViewHo
                             return true;
                         }
                     });
-                    popupMenu.inflate(R.menu.timetable_options_menu);
+                    popupMenu.inflate(R.menu.timeslot_options_menu);
                     popupMenu.show();
                 }
             });
@@ -94,6 +97,17 @@ public class TimeslotAdaptor extends RecyclerView.Adapter<TimeslotAdaptor.ViewHo
                 DateTimeFormatter formatter = DateTimeFormat.forPattern("hh:mm");
 
                 timeSlot.setText("From - " + sTime.toString(formatter) + " To " + eTime.toString(formatter).toString());
+
+                int index = 0;
+
+                for(int c : Helpers4Dehemi.dayConstant){
+                    if(c == t.getDate())
+                        break;
+
+                    index++;
+                }
+
+                timeslotDay.setText(Helpers4Dehemi.days[index]);
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -113,7 +127,7 @@ public class TimeslotAdaptor extends RecyclerView.Adapter<TimeslotAdaptor.ViewHo
                                         .collection("timetables")
                                         .document(timetableId)
                                         .collection("timeslots")
-                                        .document(timeslot.getSlotName())
+                                        .document(timeslot.getId())
                                         .delete()
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
