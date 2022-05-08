@@ -111,4 +111,6 @@
     <string name="organizer_student_here"> <u>here</u></string>
     <string name="student_login_repassword">Re-Enter Password</string>
     <string name="scan_to_join">Scan the QR code or share the ID to Atendees</string>
+    <string name="organiserIDSubmit">Enter ID</string>
+    <string name="studentOrganizerID">Organizer ID</string>
 </resources>

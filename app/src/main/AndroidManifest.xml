@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bodicount">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +19,13 @@
         <activity
             android:name=".organizer.OrganizerDashboard"
             android:exported="false" />
+        <activity
+            android:name=".attendanceMarkingOnline"
+            android:exported="false" />
+        <activity
+            android:name=".student.StudentOrganiserSubscribe"
+            android:exported="false"
+            />
         <activity
             android:name=".timetable.TimetableManagerActivity"
             android:exported="false" />
