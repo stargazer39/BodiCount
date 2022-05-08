@@ -48,7 +48,7 @@
             android:layout_marginLeft="230dp"
             android:layout_marginTop="400dp"
             android:backgroundTint="#F40C0C"
-            android:text="Next"
+            android:text="@string/back"
             android:textColor="#F6F1F1"
             android:textSize="16dp" />
 
