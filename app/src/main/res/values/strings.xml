@@ -113,4 +113,5 @@
     <string name="scan_to_join">Scan the QR code or share the ID to Atendees</string>
     <string name="organiserIDSubmit">Enter ID</string>
     <string name="studentOrganizerID">Organizer ID</string>
+    <string name="organiserIDSubmit">Copy</string>
 </resources>
