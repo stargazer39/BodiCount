@@ -1,6 +1,7 @@
 package com.bodicount.timetable;
 
 import android.content.DialogInterface;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.content.Context;
+import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,10 +18,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bodicount.Helpers4Dehemi;
 import com.bodicount.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
@@ -43,7 +47,7 @@ public class TimetableAdaptor extends RecyclerView.Adapter<TimetableAdaptor.View
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    eventRefreshHandler.editTimeslots(timetable.getTableName());
+                    eventRefreshHandler.editTimeslots(timetable.getId());
                 }
             });
 
@@ -63,6 +67,9 @@ public class TimetableAdaptor extends RecyclerView.Adapter<TimetableAdaptor.View
                                 case R.id.removeTimetable:
                                     Log.d("REMOVE", "remove clicked");
                                     removeTimetable(ctx);
+                                    break;
+                                case R.id.renameTimetable:
+                                    rename(ctx);
                             }
                             return true;
                         }
@@ -93,7 +100,7 @@ public class TimetableAdaptor extends RecyclerView.Adapter<TimetableAdaptor.View
                                 db.collection("user")
                                     .document(mAuth.getCurrentUser().getUid())
                                     .collection("timetables")
-                                    .document(timetable.getTableName())
+                                    .document(timetable.getId())
                                     .delete()
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
@@ -114,6 +121,70 @@ public class TimetableAdaptor extends RecyclerView.Adapter<TimetableAdaptor.View
                 e.printStackTrace();
             }
 
+        }
+
+        public void rename(Context ctx){
+            AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+            builder.setTitle("Enter Timetable name");
+
+            final EditText input = new EditText(ctx);
+            input.setInputType(InputType.TYPE_CLASS_TEXT);
+            input.setText(timetable.getTableName());
+            builder.setView(input);
+
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String name = "";
+                    try {
+                        name = Helpers4Dehemi.vaildateString(input.getText().toString(), true, "Table name") ;
+                    } catch (Exception e) {
+                        // showToast(e.getMessage(), Toast.LENGTH_SHORT);
+                        return;
+                    }
+
+                    // Add to the database
+                    try{
+                        FirebaseUser user = mAuth.getCurrentUser();
+
+                        db.collection("user")
+                                .document(user.getUid())
+                                .collection("timetables")
+                                .document(timetable.getId())
+                                .update("tableName", name)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            showToast("Updated table " + timetable.getTableName(), Toast.LENGTH_SHORT,ctx);
+                                            dialog.cancel();
+                                        }else{
+                                            task.getException().printStackTrace();
+                                            showToast("Failed to update table " + timetable.getTableName(), Toast.LENGTH_SHORT, ctx);
+                                            dialog.cancel();
+                                        }
+                                    }
+                                });
+                    }catch (Exception e){
+                        e.printStackTrace();
+                        showToast("Failed to add table.", Toast.LENGTH_SHORT, ctx);
+                        dialog.cancel();
+                    }
+                }
+            });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            builder.show();
+        }
+
+        private void showToast(String message, int duration, Context context){
+            Toast toast = Toast.makeText(context, message, duration);
+            toast.show();
         }
     }
 

@@ -72,7 +72,9 @@ public class TimetableManagerActivity extends AppCompatActivity {
                             List<Timetable> timetables = new ArrayList<>();
 
                             for(DocumentSnapshot doc : docList){
-                                timetables.add(doc.toObject(Timetable.class));
+                                Timetable t = doc.toObject(Timetable.class);
+                                t.setId(doc.getId());
+                                timetables.add(t);
                             }
 
                             that.setData(timetables);
@@ -120,7 +122,7 @@ public class TimetableManagerActivity extends AppCompatActivity {
         TimetableManagerActivity that = this;
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Enter a Subject");
+        builder.setTitle("Enter Timetable name");
 
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
@@ -147,7 +149,7 @@ public class TimetableManagerActivity extends AppCompatActivity {
                     db.collection("user")
                             .document(user.getUid())
                             .collection("timetables")
-                            .document(subject)
+                            .document()
                             .set(timetable)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
