@@ -10,9 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".studentsnotes.StudentSearch"
+            android:exported="false" />
+        <activity
+            android:name=".studentsnotes.StudentNotesUserView"
+            android:exported="false" />
+        <activity
+            android:name=".studentsnotes.StudentNotesManagement"
+            android:exported="false" />
+        <activity
+            android:name=".studentsnotes.StudentsNotesEdit"
+            android:exported="false" />
+        <activity
+            android:name=".studentsnotes.StudentsNotesAdd"
+            android:exported="false" />
+        <activity
             android:name=".organizer.OrganizerSignUpActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,31 +38,25 @@
             android:exported="false" />
         <activity
             android:name=".timeslot.TimeSlotManagerActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".StudentManagerDelete"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".StudentManagerReadStudentDetails"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".StudentManagerEditStudentDetails"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".StudentManagerAddStudent"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".StudentManagerDisplayStudentList"
             android:exported="false" />
         <activity
             android:name=".StudentManagerActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".timetable.TimetableManagerActivity"
             android:exported="true" />

@@ -63,4 +63,24 @@
     <string name="StudentManagerDeleteBtn">Delete</string>
     <string name="manage_timeslot_title">Manage timeslots in the time table</string>
     <string name="timeslot_manager_title">Manage time slots in timetable</string>
+    <string name="subTite">Subject Title</string>
+    <string name="subDis">Subject Description</string>
+    <string name="save">Save</string>
+    <string name="back">Back</string>
+    <string name="back">Back</string>
+    <string name="imgUrl">Image URL</string>
+    <string name="Edit">EDIT</string>
+    <string name="Delete">Delete</string>
+    <string name="Organic">Organic Chemistry</string>
+    <string name="Inorganic">"Inorganic Chemistry "</string>
+    <string name="in">Inorganic Chemistry</string>
+    <string name="Chemi">Chemistry</string>
+    <string name="Maths">Mathematics</string>
+    <string name="Phy">Physics</string>
+    <string name="Bio">Biology</string>
+    <string name="inorganic">Inorganic Chemistry</string>
+    <string name="ino">Inorganic Chemistry</string>
+    <string name="Editt">Edit</string>
+    <string name="deletee">Delete</string>
+    <string name="orga">Organic Chemistry</string>
 </resources>
