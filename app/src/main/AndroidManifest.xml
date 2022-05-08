@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bodicount">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".attendanceMarkingOnline"
+            android:exported="false" />
+        <activity
+            android:name=".student.StudentOrganiserSubscribe"
+            android:exported="false" />
         <activity
             android:name=".timetable.TimetableManagerActivity"
             android:exported="false" />
@@ -18,7 +28,6 @@
         <activity
             android:name=".Organizer_Student_Login"
             android:exported="true">
-        
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +36,7 @@
         </activity>
         <activity
             android:name=".organizer.OrganizerSignUpActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".timeslot.TimeSlotManagerActivity"
             android:exported="true" />
@@ -54,7 +63,7 @@
             android:exported="true" />
         <activity
             android:name=".student.Attendance_user_profile_edit"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".student.Attendance_User_Profile"
             android:exported="true" />
