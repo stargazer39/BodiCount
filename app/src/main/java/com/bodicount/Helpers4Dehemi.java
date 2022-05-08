@@ -3,7 +3,12 @@ package com.bodicount;
 import android.view.View;
 import android.widget.EditText;
 
+import org.joda.time.DateTimeConstants;
+
 public class Helpers4Dehemi {
+    public static String[] days = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+    public static int[] dayConstant = { DateTimeConstants.MONDAY, DateTimeConstants.TUESDAY, DateTimeConstants.WEDNESDAY, DateTimeConstants.THURSDAY, DateTimeConstants.FRIDAY, DateTimeConstants.SATURDAY, DateTimeConstants.SUNDAY };
+
     public static String vaildateString(String str, boolean trim, String tag) throws Exception {
         String new_string;
 
