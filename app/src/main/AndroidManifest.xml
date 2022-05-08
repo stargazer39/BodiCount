@@ -86,6 +86,21 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".studentsnotes.StudentSearch"
+            android:exported="false" />
+        <activity
+            android:name=".studentsnotes.StudentNotesUserView"
+            android:exported="false" />
+        <activity
+            android:name=".studentsnotes.StudentNotesManagement"
+            android:exported="false" />
+        <activity
+            android:name=".studentsnotes.StudentsNotesEdit"
+            android:exported="false" />
+        <activity
+            android:name=".studentsnotes.StudentsNotesAdd"
+            android:exported="false" />
     </application>
 
 </manifest>

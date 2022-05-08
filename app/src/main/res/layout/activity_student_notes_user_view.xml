@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".studentsnotes.StudentNotesUserView">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="393dp"
+        android:layout_height="528dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/homepage48"
+            android:layout_width="109dp"
+            android:layout_height="85dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@drawable/organic" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="216dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/ino"
+            android:textColor="#0B72C5"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/button71"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="400dp"
+            android:backgroundTint="#F40C0C"
+            android:text="Next"
+            android:textColor="#F6F1F1"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="243dp"
+            android:layout_height="372dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="105dp"
+            android:text="Inorganic chemistry is concerned with the properties and behavior of inorganic compounds, which include metals, minerals, and organometallic compounds.
+While organic chemistry is defined as the study of carbon-containing compounds, inorganic chemistry is the study of the remaining (i.e., not carbon-containing) subset of compounds. But there can be overlap between the two fields. For example, organometallic compounds usually contain a metal or metalloid bonded directly to carbon."/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="60dp"
+            android:text="What is inorganic chemistry?"
+            android:textColor="#0C0C0C"
+            android:textStyle="bold" />
+
+        "
+        android:textColor="#0A0A0B"
+        android:textSize="17dp"
+        android:textStyle="bold|italic" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
