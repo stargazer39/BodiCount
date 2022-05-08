@@ -6,17 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".studentsnotes.StudentsNotesAdd">
 
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="311dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="188dp"
-        android:backgroundTint="@color/black"
-        android:ems="10"
-        android:inputType="phone"
-        android:text="@string/subTite"
-        android:textSize="20dp"
+    <Spinner
+        android:id="@+id/subjectSpinner"
+        android:layout_width="313dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="180dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,31 +21,27 @@
         android:id="@+id/editTextPhone6"
         android:layout_width="306dp"
         android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="296dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:inputType="phone"
         android:text="@string/subDis"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPhone7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/subjectSpinner"
+        tools:layout_editor_absoluteX="52dp" />
 
     <EditText
         android:id="@+id/editTextPhone7"
         android:layout_width="304dp"
         android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:inputType="phone"
         android:text="@string/imgUrl"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone6" />
 
@@ -56,11 +49,12 @@
         android:id="@+id/button2"
         android:layout_width="146dp"
         android:layout_height="48dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/btn_backgroundcolor"
         android:text="@string/save"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone7" />
 
@@ -68,11 +62,11 @@
         android:id="@+id/button5"
         android:layout_width="93dp"
         android:layout_height="46dp"
-        android:layout_marginStart="156dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/btn_backgroundcolor"
         android:text="@string/back"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
         tools:text="@string/back" />
