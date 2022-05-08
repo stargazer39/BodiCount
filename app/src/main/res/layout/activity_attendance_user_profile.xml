@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="deleteData"
     tools:context=".student.Attendance_User_Profile">
 
     <ImageView
@@ -21,72 +22,59 @@
         android:id="@+id/userProfile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/userprofile_user_name"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintTop_toBottomOf="@+id/button10"
+        tools:text="@string/userprofile_user_name" />
 
     <TextView
         android:id="@+id/userProfileAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/userprofile_user_age"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userProfile_name" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/deletebtn_backgroundcolor"
-        android:text="@string/userprofile_deletebtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userProfilePhone"
-        app:rippleColor="#F44336" />
+        app:layout_constraintTop_toBottomOf="@+id/userProfile_name"
+        tools:text="@string/userprofile_user_age" />
 
     <TextView
         android:id="@+id/userProfileEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/userprofile_email"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userProfileGender" />
+        app:layout_constraintTop_toBottomOf="@+id/userProfileGender"
+        tools:text="@string/userprofile_email" />
 
     <TextView
         android:id="@+id/userProfilePhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/userprofile_phonenumber"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userProfileEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/userProfileEmail"
+        tools:text="@string/userprofile_phonenumber" />
 
     <TextView
         android:id="@+id/userProfileGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/userprofile_gender"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userProfileAge" />
+        app:layout_constraintTop_toBottomOf="@+id/userProfileAge"
+        tools:text="@string/userprofile_gender" />
 
     <Button
         android:id="@+id/button10"
@@ -95,9 +83,45 @@
         android:layout_marginStart="272dp"
         android:layout_marginEnd="100dp"
         android:backgroundTint="@color/btn_backgroundcolor"
+        android:onClick="goToEdit"
         app:icon="@drawable/ic_baseline_edit_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <LinearLayout
+        android:layout_width="407dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userProfilePhone">
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:text="@string/Unsubscribe"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/deletebtn_backgroundcolor"
+            android:gravity="center"
+            android:onClick="deleteData"
+            android:text="@string/userprofile_deletebtn"
+            app:rippleColor="#F44336" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

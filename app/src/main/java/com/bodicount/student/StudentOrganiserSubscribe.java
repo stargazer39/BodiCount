@@ -31,6 +31,9 @@ public class StudentOrganiserSubscribe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_organiser_subscribe);
+
+        db = FirebaseFirestore.getInstance();
+        sAuth = FirebaseAuth.getInstance();
     }
 
 
@@ -43,24 +46,26 @@ public class StudentOrganiserSubscribe extends AppCompatActivity {
         EditText orgID = (EditText) findViewById(R.id.studentOrganiserID);
 
         try{
-            currentStudent.setOrganizerID(Helpers4Dehemi.vaildateString(orgID, true, "Organizer ID"));
+            //currentStudent.setOrganizerID(Helpers4Dehemi.vaildateString(orgID, true, "Organizer ID"));
+            String id = Helpers4Dehemi.vaildateString(orgID, true, "Organizer ID");
 
             db.collection("user")
                     .document(sAuth.getCurrentUser().getUid())
-                    .set(currentStudent)
+                    .update("organizerID", id)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 showToast("Successfully added Organizer ID", Toast.LENGTH_SHORT);
-//                                Intent intent = new Intent(this, Attendance_homepage.class);
-//                                startActivity(intent);
+                                Intent intent = new Intent(getApplicationContext(), Attendance_homepage.class);
+                                startActivity(intent);
                             }else{
                                 showToast("Failed to add Organizer ID", Toast.LENGTH_SHORT);
                             }
                         }
                     });
         }catch(Exception e){
+            e.printStackTrace();
             showToast(e.getMessage(), Toast.LENGTH_SHORT);
         }
     }

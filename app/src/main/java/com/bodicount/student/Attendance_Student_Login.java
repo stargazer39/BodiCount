@@ -19,9 +19,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Attendance_Student_Login extends AppCompatActivity {
     private FirebaseAuth sAuth;
+    private FirebaseFirestore db;
+    private FirebaseUser user;
+    private Student currentStudent;
+    protected String orgID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +60,44 @@ public class Attendance_Student_Login extends AppCompatActivity {
 
         Attendance_Student_Login that = this;
 
+        db = FirebaseFirestore.getInstance();
+        sAuth = FirebaseAuth.getInstance();
+        user = sAuth.getCurrentUser();
+
+
+
+
         sAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             showToast("Login Success", Toast.LENGTH_SHORT);
-                            Intent intent = new Intent(that, Attendance_homepage.class);
-                            startActivity(intent);
+                            db.collection("user").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .get().addOnCompleteListener(task2 -> {
+
+                                if(task.isSuccessful()){
+                                    DocumentSnapshot snap = task2.getResult();
+                                    Student student = snap.toObject(Student.class);
+
+                                    currentStudent = student;
+
+                                    orgID = student.getOrganizerID();
+
+                                    if(orgID == null) {
+                                        Intent intent = new Intent(that, StudentOrganiserSubscribe.class);
+                                        startActivity(intent);
+                                    }else{
+                                        Intent intent = new Intent(that, Attendance_homepage.class);
+                                        startActivity(intent);
+                                    }
+                                }else{
+                                    //deal with error
+                                    task.getException().printStackTrace();
+                                }
+
+                            });
+
                         }else{
                             showToast("Login Failed", Toast.LENGTH_SHORT);
                         }
