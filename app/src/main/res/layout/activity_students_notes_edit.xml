@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".studentsnotes.StudentsNotesEdit">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="390dp"
+        android:layout_height="297dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/homepage4"
+            android:layout_width="109dp"
+            android:layout_height="85dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@drawable/organic" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="216dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Organic"
+            android:textColor="#0B72C5"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="200dp"
+            android:backgroundTint="@color/btn_backgroundcolor"
+            android:shadowColor="#EFE6E6"
+            android:text="@string/Edit"
+            android:textColor="#F3EBEB"
+            android:textSize="16dp" />
+
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="200dp"
+            android:backgroundTint="@color/btn_backgroundcolor"
+            android:text="@string/Delete"
+            android:textColor="#F6F1F1"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="243dp"
+            android:layout_height="142dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="50dp"
+            android:text="The invention relates to a new process for the preparation of organic carbonates, easily applicable also on industrial scale.
+Organic carbonates are among the most promising green .....
+
+"
+            android:textColor="#0A0A0B"
+            android:textSize="17dp"
+            android:textStyle="bold|italic" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="390dp"
+        android:layout_height="308dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="400dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/homepage48"
+            android:layout_width="105dp"
+            android:layout_height="79dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@drawable/inorganic" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="293dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/in"
+            android:textColor="#0B72C5"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="200dp"
+            android:backgroundTint="#F44336"
+            android:shadowColor="#EFE6E6"
+            android:text="@string/Edit"
+            android:textColor="#F3EBEB"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="200dp"
+            android:backgroundTint="@color/btn_backgroundcolor"
+            android:text="@string/Delete"
+            android:textColor="#F6F1F1"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="123dp"
+            android:layout_marginTop="50dp"
+            android:text="Inorganic chemistry is concerned with the properties and behavior of inorganic compounds, which include metals, minerals, and organometallic compounds.
+while ...."
+            android:textColor="#13141B"
+            android:textSize="17dp"
+            android:textStyle="bold|italic" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
