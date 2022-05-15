@@ -21,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.joda.time.DateTime;
+
 public class OrganizerLogin extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private boolean restarted = false;
@@ -40,6 +42,8 @@ public class OrganizerLogin extends AppCompatActivity {
             startActivity(intent);
             return;
         }
+
+
     }
 
     public void login(View view) {

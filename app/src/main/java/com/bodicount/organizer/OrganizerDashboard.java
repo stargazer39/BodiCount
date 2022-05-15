@@ -1,6 +1,7 @@
 
 package com.bodicount.organizer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,10 +11,18 @@ import android.view.View;
 import com.bodicount.R;
 import com.bodicount.StudentManagerActivity;
 import com.bodicount.timetable.TimetableManagerActivity;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class OrganizerDashboard extends AppCompatActivity {
     private FirebaseAuth auth;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +34,26 @@ public class OrganizerDashboard extends AppCompatActivity {
         if(auth.getCurrentUser() == null){
             finish();
         }
+
+        db = FirebaseFirestore.getInstance();
+        db.collection("user")
+                .document(auth.getUid())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if(task.isSuccessful()){
+                            Organizer organizer = task.getResult().toObject(Organizer.class);
+                            /*if(organizer.getLocation() == null || organizer.getLocation().length() <= 0){
+                                // Get location
+                                Intent intent = new Intent(getApplicationContext(), SelectLocationActivity.class);
+                                startActivity(intent);
+                            }*/
+                        }else{
+                            task.getException().printStackTrace();
+                        }
+                    }
+                });
     }
 
     public void goTimetableManagement(View view){
@@ -44,6 +73,12 @@ public class OrganizerDashboard extends AppCompatActivity {
     public void goToAddStudent(View view){
         Intent intent = new Intent(this, OrganizerStudentSubscribe.class);
         intent.putExtra("id", auth.getCurrentUser().getUid());
+        startActivity(intent);
+    }
+
+    public void logout(View view){
+        auth.signOut();
+        Intent intent = new Intent(getApplicationContext(), OrganizerLogin.class);
         startActivity(intent);
     }
 }

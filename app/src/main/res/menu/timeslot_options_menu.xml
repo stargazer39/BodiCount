@@ -4,4 +4,6 @@
         android:title="Remove" />
     <item android:id="@+id/renameTimetable"
         android:title="Rename" />
+    <item android:id="@+id/timeSlotEdit"
+        android:title="Rename" />
 </menu>

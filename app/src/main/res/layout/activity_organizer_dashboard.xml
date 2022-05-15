@@ -10,20 +10,19 @@
         android:id="@+id/button8"
         android:layout_width="295dp"
         android:layout_height="80dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="32dp"
         android:onClick="goTimetableManagement"
-        android:text="Manage Timetables"
+        android:text="@string/orgMangeTimetables"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
     <Button
         android:id="@+id/button13"
         android:layout_width="295dp"
         android:layout_height="80dp"
         android:onClick="goStudentManagement"
-        android:text="Manage students"
+        android:text="@string/orgManageStudent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button8" />
@@ -33,7 +32,7 @@
         android:layout_width="295dp"
         android:layout_height="80dp"
         android:onClick="goMyProfile"
-        android:text="My profile"
+        android:text="@string/orgMyProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button13" />
@@ -48,4 +47,28 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button14" />
+
+    <Button
+        android:id="@+id/logOutOrganizer"
+        android:layout_width="295dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#983E3E"
+        android:onClick="logout"
+        android:text="@string/orgLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button16" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/orgManangerTitle"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

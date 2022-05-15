@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Organizer extends User {
     private List<String> studentList = new ArrayList<>();
+    private String location;
 
     @Override
     public String getType() {
@@ -20,5 +21,13 @@ public class Organizer extends User {
 
     public void setStudentList(List<String> studentList) {
         this.studentList = studentList;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

@@ -135,4 +135,10 @@
     <string name="Unsubscribe">Unsubscribe from Organization ?</string>
     <string name="studentNotes">Notes</string>
     <string name="studentProfile">Profile</string>
+    <string name="orgManangerTitle">Manage your organization</string>
+    <string name="orgMangeTimetables">Manage Timetables</string>
+    <string name="orgManageStudent">Manage students</string>
+    <string name="orgMyProfile">My Profile</string>
+    <string name="orgShareQR">"Share QR "</string>
+    <string name="orgLogout">Logout</string>
 </resources>
