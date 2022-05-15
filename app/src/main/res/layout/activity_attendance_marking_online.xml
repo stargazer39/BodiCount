@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".attendanceMarkingOnline">
+    tools:context=".student.attendanceMarkingOnline">
 
     <Button
         android:id="@+id/button13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="192dp"
         android:backgroundTint="@color/btn_backgroundcolor"
+        android:onClick="onTimeInCLick"
         android:text="@string/attendance_timeinbtn"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="395dp" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <TextView
         android:id="@+id/textView30"
@@ -28,11 +32,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="234dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

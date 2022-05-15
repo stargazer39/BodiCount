@@ -42,6 +42,7 @@
         android:layout_height="88dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/btn_backgroundcolor"
+        android:onClick="goTomarking"
         android:text="@string/homepage_ongoingbtn1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
