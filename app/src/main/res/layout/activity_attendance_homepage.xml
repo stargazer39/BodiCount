@@ -34,10 +34,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/nowTslot" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/nowTslot"
         android:layout_width="214dp"
         android:layout_height="88dp"
         android:layout_marginTop="8dp"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <Button
-        android:id="@+id/orgLoginbtn1"
+        android:id="@+id/nextTslot"
         android:layout_width="214dp"
         android:layout_height="88dp"
         android:layout_marginTop="8dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/nextAfterTslot"
         android:layout_width="214dp"
         android:layout_height="88dp"
         android:layout_marginTop="16dp"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orgLoginbtn1" />
+        app:layout_constraintTop_toBottomOf="@+id/nextTslot" />
 
     <TextView
         android:id="@+id/homepageDate"
@@ -111,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button17"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/nextAfterTslot" />
 
     <Button
         android:id="@+id/button17"
@@ -124,7 +124,7 @@
         app:layout_constraintEnd_toStartOf="@+id/userProfile"
         app:layout_constraintHorizontal_bias="0.209"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/nextAfterTslot" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
