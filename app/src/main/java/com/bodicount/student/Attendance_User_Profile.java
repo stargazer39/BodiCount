@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bodicount.Attendance_Marking;
 import com.bodicount.Helpers4Nithula;
 import com.bodicount.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -47,26 +48,19 @@ public class Attendance_User_Profile extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         getData();
     }
-
-
     private void getData(){
-
-
-
-//        Attendance_User_Profile that = this;
-
         db.collection("user").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .get().addOnCompleteListener(task -> {
             if(task.isSuccessful()){
                 DocumentSnapshot snap = task.getResult();
                 Student student = snap.toObject(Student.class);
-
+                //Get the data from the database
                 String email = student.getEmail();
                 String fName = student.getfName();
                 String lName = student.getlName();
                 String phone = student.getPhone();
                 String gender = student.getGender();
-
+                //Set the data in the textview
                 TextView userName = (TextView) findViewById(R.id.userProfile_name);
                 userName.setText(fName+ " " + lName);
                 TextView userEmail = (TextView) findViewById(R.id.userProfileEmail);
@@ -76,13 +70,10 @@ public class Attendance_User_Profile extends AppCompatActivity {
                 TextView userGender = (TextView) findViewById(R.id.userProfileGender);
                 userGender.setText(Helpers4Nithula.checkIfEmpty(gender));
 
-
-                //other stuff
             }else{
-                //deal with error
+                //deals with error
                 task.getException().printStackTrace();
             }
-
         });
     }
 
@@ -97,21 +88,6 @@ public class Attendance_User_Profile extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         sAuth = FirebaseAuth.getInstance();
         String user = sAuth.getCurrentUser().getUid();
-
-//        new AlertDialog.Builder(getApplicationContext())
-//                .setTitle("Delete Account".toUpperCase(Locale.ROOT))
-//                .setMessage("Do you really want to delete your account?")
-//                .setIcon(android.R.drawable.ic_dialog_alert)
-//                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener()
-//        db.collection("user").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
-//                .delete("o").addOnCompleteListener(task -> {
-//
-//                    if(task.isSuccessful()){
-////
-////                        Log.d(TAG, "DocumentSnapshot successfully deleted!");
-//                    }
-//        });
-
 
         Map<String, Object> unsubscribe = new HashMap<>();
         unsubscribe.put("organizerID", FieldValue.delete());
@@ -139,5 +115,6 @@ public class Attendance_User_Profile extends AppCompatActivity {
         startActivity(intent);
 
     }
+
 
 }

@@ -23,7 +23,7 @@
             android:name=".organizer.OrganizerDashboard"
             android:exported="false" />
         <activity
-            android:name=".attendanceMarkingOnline"
+            android:name=".student.attendanceMarkingOnline"
             android:exported="false" />
         <activity
             android:name=".student.StudentOrganiserSubscribe"
