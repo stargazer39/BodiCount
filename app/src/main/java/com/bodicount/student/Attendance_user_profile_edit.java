@@ -193,6 +193,5 @@ public class Attendance_user_profile_edit extends AppCompatActivity {
     public void backBtn2(View view){
         Intent intent = new Intent(this, Attendance_User_Profile.class);
         startActivity(intent);
-
     }
 }

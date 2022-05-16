@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -61,6 +63,15 @@ public class OrganizerSignUpActivity extends AppCompatActivity {
             organizer.setEmail(Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgEmailSignUp), true, "Email"));
             organizer.setPassword(Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgPasswordSignUp), false, "Password"));
             re_password = Helpers4Dehemi.vaildateString((EditText) findViewById(R.id.orgPasswordReSignUp), false, "Repeat Password");
+
+            if(!Patterns.EMAIL_ADDRESS.matcher(organizer.getEmail()).matches()){
+                showToast("Enter a valid email", Toast.LENGTH_SHORT);
+                return;
+            }
+
+            if(organizer.getPassword().length() < 6){
+                showToast("Password length is too short", Toast.LENGTH_SHORT);
+            }
         }catch (Exception e){
             showToast(e.getMessage(), Toast.LENGTH_SHORT);
             return;

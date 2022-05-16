@@ -3,12 +3,16 @@ package com.bodicount.studentsnotes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bodicount.R;
+import com.bodicount.student.Student;
 import com.bodicount.timeslot.TimeslotAdaptor;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -21,7 +25,7 @@ public class StudentNotesListAdapter extends RecyclerView.Adapter<StudentNotesLi
 
     @Override
     public void onBindViewHolder(@NonNull StudentNotesListAdapter.ViewHolder holder, int position) {
-
+        holder.setStudentNote(notes.get(position));
     }
 
     @Override
@@ -39,9 +43,20 @@ public class StudentNotesListAdapter extends RecyclerView.Adapter<StudentNotesLi
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView title;
+        private TextView desc;
+        private StudentNote note;
+        public ViewHolder(@NonNull View view) {
+            super(view);
+            title = (TextView) view.findViewById(R.id.noteTitileView);
+            desc = (TextView) view.findViewById(R.id.noteContent);
+        }
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
+        public void setStudentNote(StudentNote note){
+            this.note = note;
+
+            title.setText(note.getTitle());
+            desc.setText(note.getTitle());
         }
     }
 }

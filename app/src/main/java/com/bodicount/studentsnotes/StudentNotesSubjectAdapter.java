@@ -64,7 +64,7 @@ public class StudentNotesSubjectAdapter extends RecyclerView.Adapter<StudentNote
                 name.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        view.getContext().startActivity(new Intent(view.getContext(), StudentsNotesAdd.class));
+                        view.getContext().startActivity(new Intent(view.getContext(), StudentNotesUserView.class));
                     }
                 });
             }

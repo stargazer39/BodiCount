@@ -40,6 +40,7 @@ public class StudentManagerActivity extends AppCompatActivity {
 
     private void refresh(){
         try{
+            studentList = new ArrayList<>();
             Log.e("ddtt", mAuth.getCurrentUser().getUid());
             db.collection("user")
                     .document(mAuth.getCurrentUser().getUid())
