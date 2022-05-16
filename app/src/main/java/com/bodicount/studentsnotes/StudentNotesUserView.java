@@ -32,8 +32,12 @@ public class StudentNotesUserView extends AppCompatActivity {
         FirebaseUser user = sAuth.getCurrentUser();
         db = FirebaseFirestore.getInstance();
 
+        refresh();
+    }
+
+    public void refresh() {
         db.collection("user")
-                .document(user.getUid())
+                .document(sAuth.getCurrentUser().getUid())
                 .collection("notes")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -55,10 +59,14 @@ public class StudentNotesUserView extends AppCompatActivity {
                     }
                 });
     }
-
     public void setData(List<StudentNote> studentNotes) {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.notesListView);
-        StudentNotesListAdapter listAdapter = new StudentNotesListAdapter(studentNotes);
+        StudentNotesListAdapter listAdapter = new StudentNotesListAdapter(studentNotes, new OnDelete() {
+            @Override
+            public void onDelete() {
+                refresh();
+            }
+        });
 
         recyclerView.setAdapter(listAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
