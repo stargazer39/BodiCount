@@ -27,6 +27,7 @@ import java.util.List;
 public class StudentManagerActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private List<Student> studentList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class StudentManagerActivity extends AppCompatActivity {
 
     private void refresh(){
         try{
+            Log.e("ddtt", mAuth.getCurrentUser().getUid());
             db.collection("user")
                     .document(mAuth.getCurrentUser().getUid())
                     .get()
@@ -56,36 +58,52 @@ public class StudentManagerActivity extends AppCompatActivity {
 
                                 if(students == null || students.size() <= 0){
                                     Log.i("student", "No students");
-                                    return;
+                                }else{
+                                    db.collection("user")
+                                            .whereIn(FieldPath.documentId(), students)
+                                            .get()
+                                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                    if(task.isSuccessful()){
+                                                        List<DocumentSnapshot> documentSnapshots = task.getResult().getDocuments();
+
+                                                        for(DocumentSnapshot snapshot : documentSnapshots){
+                                                            Student student = snapshot.toObject(Student.class);
+                                                            student.setId(snapshot.getId());
+                                                            studentList.add(student);
+                                                        }
+
+                                                        setData(studentList);
+                                                    }else{
+                                                        task.getException().printStackTrace();
+                                                    }
+                                                }
+                                            });
                                 }
 
                                 // Update the UI
                                 db.collection("user")
-                                        .whereIn(FieldPath.documentId(), students)
+                                        .whereEqualTo("organizerID", mAuth.getCurrentUser().getUid())
                                         .get()
                                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                             @Override
                                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                                if(task.isSuccessful()){
-                                                    List<DocumentSnapshot> documentSnapshots = task.getResult().getDocuments();
-                                                    List<Student> studentList = new ArrayList<>();
+                                                for(DocumentSnapshot snapshot : task.getResult().getDocuments()){
 
-                                                    for(DocumentSnapshot snapshot : documentSnapshots){
-                                                        Student student = snapshot.toObject(Student.class);
-                                                        student.setId(snapshot.getId());
-                                                        studentList.add(student);
-                                                    }
-
-                                                    setData(studentList);
-                                                }else{
-                                                    task.getException().printStackTrace();
+                                                    Student student = snapshot.toObject(Student.class);
+                                                    student.setId(snapshot.getId());
+                                                    studentList.add(student);
                                                 }
+
+                                                setData(studentList);
                                             }
                                         });
                             }
                         }
                     });
         }catch (Exception e){
+            Log.e("ddtt", e.getStackTrace().toString());
             e.printStackTrace();
         }
     }
