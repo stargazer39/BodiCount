@@ -34,44 +34,44 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/nowTslot" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/nowTslot"
         android:layout_width="214dp"
         android:layout_height="88dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/btn_backgroundcolor"
         android:onClick="goTomarking"
-        android:text="@string/homepage_ongoingbtn1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        tools:text="@string/homepage_ongoingbtn1" />
 
     <Button
-        android:id="@+id/orgLoginbtn1"
+        android:id="@+id/nextTslot"
         android:layout_width="214dp"
         android:layout_height="88dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/btn_backgroundcolor"
-        android:text="@string/homepage_ongoingbtn2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:text="@string/homepage_ongoingbtn2" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/nextAfterTslot"
         android:layout_width="214dp"
         android:layout_height="88dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/btn_backgroundcolor"
-        android:text="@string/homepage_ongoingbtn2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orgLoginbtn1" />
+        app:layout_constraintTop_toBottomOf="@+id/nextTslot"
+        tools:text="@string/homepage_ongoingbtn2" />
 
     <TextView
         android:id="@+id/homepageDate"
@@ -101,31 +101,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homepageDate" />
 
-    <Button
+    <ImageButton
         android:id="@+id/userProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
         android:backgroundTint="@color/StudentManagerBtnColor"
         android:onClick="goToUserProfile"
         android:text="@string/studentProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button17"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
         android:backgroundTint="@color/StudentManagerBtnColor"
         android:onClick="goToNotes"
         android:text="@string/studentNotes"
-        app:layout_constraintEnd_toStartOf="@+id/userProfile"
-        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintEnd_toEndOf="@+id/userProfile"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_note_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

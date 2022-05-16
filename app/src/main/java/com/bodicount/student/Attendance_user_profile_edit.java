@@ -19,9 +19,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bodicount.Attendance_homepage;
 import com.bodicount.Helpers4Dehemi;
 import com.bodicount.Helpers4Nithula;
 import com.bodicount.R;
@@ -164,6 +166,7 @@ public class Attendance_user_profile_edit extends AppCompatActivity {
             currentStudent.setlName(Helpers4Dehemi.vaildateString(userName, true, "Last Name"));
             currentStudent.setEmail(Helpers4Dehemi.vaildateString(userEmail, true, "Email"));
             currentStudent.setPhone(Helpers4Dehemi.vaildateString(userPhone, true, "Phone"));
+            currentStudent.setGender(gender);
 
             if(currentImgUri != null)
                 currentStudent.setImage(encodeToBase64(currentImgUri));
@@ -185,5 +188,11 @@ public class Attendance_user_profile_edit extends AppCompatActivity {
         }catch(Exception e){
             showToast(e.getMessage(), Toast.LENGTH_SHORT);
         }
+    }
+
+    public void backBtn2(View view){
+        Intent intent = new Intent(this, Attendance_User_Profile.class);
+        startActivity(intent);
+
     }
 }

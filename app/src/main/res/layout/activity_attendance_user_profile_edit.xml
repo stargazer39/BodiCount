@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".student.Attendance_user_profile_edit">
 
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/btn_backgroundcolor"
+        android:onClick="backBtn2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
     <ImageView
         android:id="@+id/editPic"
         android:layout_width="231dp"
@@ -90,7 +103,9 @@
         <RadioGroup
             android:id="@+id/radioSex"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
 
             <RadioButton
                 android:id="@+id/radioMale"
