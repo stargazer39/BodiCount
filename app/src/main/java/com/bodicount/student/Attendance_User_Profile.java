@@ -13,7 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bodicount.Attendance_Marking;
+import com.bodicount.Attendance_homepage;
 import com.bodicount.Helpers4Nithula;
+import com.bodicount.MainActivity;
 import com.bodicount.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,7 +31,6 @@ import java.util.Map;
 
 public class Attendance_User_Profile extends AppCompatActivity {
 
-//    private static final String TAG = Deleted;
     private FirebaseAuth sAuth;
     private FirebaseUser user;
     private FirebaseFirestore db;
@@ -85,22 +86,65 @@ public class Attendance_User_Profile extends AppCompatActivity {
 
 
     public void deleteData(View view){
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        sAuth = FirebaseAuth.getInstance();
-        String user = sAuth.getCurrentUser().getUid();
 
-        Map<String, Object> unsubscribe = new HashMap<>();
-        unsubscribe.put("organizerID", FieldValue.delete());
-        FirebaseFirestore.getInstance()
-                .collection("user")
-                .document(user)
-                .update(unsubscribe).addOnCompleteListener(task -> {
-                    if(task.isSuccessful()){
-                        showToast("Successfully unsubscribed from Organization", Toast.LENGTH_SHORT);
-                    }else{
-                        showToast("Unsubscription Unsuccessful", Toast.LENGTH_SHORT);
-                    }
-        });
+        AlertDialog.Builder builder
+                = new AlertDialog
+                .Builder(Attendance_User_Profile.this);
+
+        builder.setMessage("Do you want to Unsubscribe ?");
+        builder.setTitle("Alert !");
+        builder.setCancelable(false);
+
+        builder
+                .setPositiveButton(
+                        "Yes",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                sAuth = FirebaseAuth.getInstance();
+                                String user = sAuth.getCurrentUser().getUid();
+
+                                Map<String, Object> unsubscribe = new HashMap<>();
+                                unsubscribe.put("organizerID", FieldValue.delete());
+                                FirebaseFirestore.getInstance()
+                                        .collection("user")
+                                        .document(user)
+                                        .update(unsubscribe).addOnCompleteListener(task -> {
+                                    if(task.isSuccessful()){
+                                        showToast("Successfully unsubscribed from Organization", Toast.LENGTH_SHORT);
+                                        Intent intent = new Intent(getApplicationContext(), StudentOrganiserSubscribe.class);
+                                        startActivity(intent);
+                                    }else{
+                                        showToast("Unsubscription Unsuccessful", Toast.LENGTH_SHORT);
+                                    }
+                                });
+                            }
+                        });
+
+        builder
+                .setNegativeButton(
+                        "No",
+                        new DialogInterface
+                                .OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+                                dialog.cancel();
+                            }
+                        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+
+
+
     }
 
     public void goToEdit(View view){
@@ -108,13 +152,55 @@ public class Attendance_User_Profile extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     public void logout(View view){
 
-        sAuth.getInstance().signOut();
-        Intent intent = new Intent(this, Attendance_Student_Login.class);
+        AlertDialog.Builder builder
+                = new AlertDialog
+                .Builder(Attendance_User_Profile.this);
+
+        builder.setMessage("Do you want to Log Out ?");
+        builder.setTitle("Alert !");
+        builder.setCancelable(false);
+
+        builder
+                .setPositiveButton(
+                        "Yes",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+                                sAuth.getInstance().signOut();
+                                showToast("Successfully Signed Out", Toast.LENGTH_SHORT);
+                                Intent intent = new Intent(getApplicationContext(), Attendance_Student_Login.class);
+                                startActivity(intent);
+                            }
+                        });
+
+        builder
+                .setNegativeButton(
+                        "No",
+                        new DialogInterface
+                                .OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+                                dialog.cancel();
+                            }
+                        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void goHomeBtn(View view){
+        Intent intent = new Intent(this, Attendance_homepage.class);
         startActivity(intent);
 
     }
-
 
 }
