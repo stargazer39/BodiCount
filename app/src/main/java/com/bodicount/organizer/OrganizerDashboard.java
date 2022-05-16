@@ -2,8 +2,10 @@
 package com.bodicount.organizer;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -77,8 +79,20 @@ public class OrganizerDashboard extends AppCompatActivity {
     }
 
     public void logout(View view){
-        auth.signOut();
-        Intent intent = new Intent(getApplicationContext(), OrganizerLogin.class);
-        startActivity(intent);
+        new AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to logout?")
+
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        auth.signOut();
+                        Intent intent = new Intent(getApplicationContext(), OrganizerLogin.class);
+                        startActivity(intent);
+                    }
+                })
+
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 }
