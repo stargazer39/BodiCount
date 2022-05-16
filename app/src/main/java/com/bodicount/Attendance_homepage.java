@@ -100,7 +100,7 @@ public class Attendance_homepage extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                             if(task.isSuccessful()){
                                                 List<Timeslot> timeslotList = task.getResult().toObjects(Timeslot.class);
-                                                // Get the today's time slots
+
                                                 DateTime tNow = DateTime.now();
                                                 LocalTime timeNow = tNow.toLocalTime();
 
@@ -205,6 +205,7 @@ public class Attendance_homepage extends AppCompatActivity {
         startActivity(intent);
     }
     public void goTomarking(View view){
+
         Intent intent = new Intent(this , attendanceMarkingOnline.class);
         startActivity(intent);
     }
