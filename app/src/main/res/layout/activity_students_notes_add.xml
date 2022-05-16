@@ -6,57 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".studentsnotes.StudentsNotesAdd">
 
-    <Spinner
-        android:id="@+id/subjectSpinner"
-        android:layout_width="313dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="180dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
-        android:id="@+id/editTextPhone6"
+        android:id="@+id/noteText"
         android:layout_width="306dp"
         android:layout_height="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:inputType="phone"
         android:text="@string/subDis"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/subjectSpinner"
-        tools:layout_editor_absoluteX="52dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteTitle" />
 
     <EditText
-        android:id="@+id/editTextPhone7"
+        android:id="@+id/noteTitle"
         android:layout_width="304dp"
         android:layout_height="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:inputType="phone"
-        android:text="@string/imgUrl"
+        android:text="Note title"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone6" />
+        app:layout_constraintTop_toBottomOf="@+id/nothin" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="146dp"
         android:layout_height="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/btn_backgroundcolor"
         android:text="@string/save"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone7" />
+        app:layout_constraintTop_toBottomOf="@+id/noteText" />
 
     <Button
         android:id="@+id/button5"
@@ -70,5 +61,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
         tools:text="@string/back" />
+
+    <TextView
+        android:id="@+id/nothin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:text="Add Note"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

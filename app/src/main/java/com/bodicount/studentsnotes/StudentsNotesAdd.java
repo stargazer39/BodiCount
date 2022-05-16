@@ -6,7 +6,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bodicount.Helpers4Dehemi;
 import com.bodicount.R;
 import com.bodicount.student.Student;
 import com.bodicount.timeslot.Timeslot;
@@ -24,6 +29,8 @@ import java.util.List;
 public class StudentsNotesAdd extends AppCompatActivity {
     private FirebaseAuth sAuth;
     private FirebaseFirestore db;
+    private EditText desc;
+    private EditText title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,41 +41,37 @@ public class StudentsNotesAdd extends AppCompatActivity {
         FirebaseUser user = sAuth.getCurrentUser();
         db = FirebaseFirestore.getInstance();
 
+        desc = (EditText) findViewById(R.id.noteText);
+        title = (EditText) findViewById(R.id.noteTitle);
+    }
+
+    public void addNote(View view){
+        StudentNote note = new StudentNote();
+        try{
+            note.setDescription(Helpers4Dehemi.vaildateString(desc, true, "Description"));
+            note.setTitle(Helpers4Dehemi.vaildateString(title, true, "Title"));
+        }catch (Exception e){
+            showToast(e.getMessage(), Toast.LENGTH_SHORT);
+        }
+
         db.collection("user")
                 .document(sAuth.getCurrentUser().getUid())
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                .collection("notes")
+                .document()
+                .set(note)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Student s = task.getResult().toObject(Student.class);
-                            Log.i("poop", s.getOrganizerID());
-                            db.collection("user")
-                                    .document(s.getOrganizerID())
-                                    .collection("timetables")
-                                    .document(s.getTimetableID())
-                                    .collection("timeslots")
-                                    .get()
-                                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                            if(task.isSuccessful()){
-                                                List<Timeslot> list = new ArrayList<>();
-                                                List<String> subjects = new ArrayList<>();
-                                                for(DocumentSnapshot doc : task.getResult()) {
-                                                    Timeslot t = doc.toObject(Timeslot.class);
-                                                    t.setId(doc.getId());
-                                                    list.add(t);
-                                                    subjects.add(t.getSlotName());
-                                                }
-
-                                            }else{
-                                                task.getException().printStackTrace();
-                                            }
-                                        }
-                                    });
+                            showToast("Added note", Toast.LENGTH_SHORT);
+                            finish();
                         }
                     }
                 });
+    }
+
+    private void showToast(String message, int duration){
+        Toast toast = Toast.makeText(this, message, duration);
+        toast.show();
     }
 }

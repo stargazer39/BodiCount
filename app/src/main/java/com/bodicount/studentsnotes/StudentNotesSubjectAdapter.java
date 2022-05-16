@@ -1,6 +1,7 @@
 package com.bodicount.studentsnotes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,16 @@ public class StudentNotesSubjectAdapter extends RecyclerView.Adapter<StudentNote
         public void setTimetable(Timeslot t){
             this.timeslot = t;
             name.setText(timeslot.getSlotName());
+
+            if(timeslot.getId() == "NOTES"){
+                name.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        view.getContext().startActivity(new Intent(view.getContext(), StudentsNotesAdd.class));
+                    }
+                });
+            }
+
         }
     }
 }

@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.cardview.widget.CardView android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="100dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginRight="200dp"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    app:cardMaxElevation="12dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/homepage4"
+        android:layout_width="109dp"
+        android:layout_height="85dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        app:srcCompat="@drawable/organic" />
+
+    <TextView
+        android:id="@+id/noteTitileView"
+        android:layout_width="216dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/orga"
+        android:textColor="#0B72C5"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="@color/btn_backgroundcolor"
+        android:shadowColor="#EFE6E6"
+        android:text="@string/Editt"
+        android:textColor="#F3EBEB"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/button71"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="@color/btn_backgroundcolor"
+        android:shadowColor="#EFE6E6"
+        android:text="@string/Delete"
+        android:textColor="#F3EBEB"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/noteContent"
+        android:layout_width="243dp"
+        android:layout_height="142dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="50dp"
+        android:text="The invention relates to a new process for the preparation of organic carbonates, easily applicable also on industrial scale.
+Organic carbonates are among the most promising green .....
+
+"
+        android:textColor="#0A0A0B"
+        android:textSize="17dp"
+        android:textStyle="bold|italic" />
+
+</androidx.cardview.widget.CardView>

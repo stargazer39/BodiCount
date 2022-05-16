@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.bodicount.R;
 import com.bodicount.student.Student;
@@ -57,7 +59,7 @@ public class StudentNotesManagement extends AppCompatActivity {
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if(task.isSuccessful()){
                             Student s = task.getResult().toObject(Student.class);
-                            Log.i("poop", s.getOrganizerID());
+
                             db.collection("user")
                                     .document(s.getOrganizerID())
                                     .collection("timetables")
@@ -70,6 +72,11 @@ public class StudentNotesManagement extends AppCompatActivity {
                                             if(task.isSuccessful()){
                                                 List<Timeslot> list = new ArrayList<>();
 
+                                                Timeslot other = new Timeslot();
+                                                other.setSlotName("My notes");
+                                                other.setId("NOTES");
+
+                                                list.add(other);
                                                 for(DocumentSnapshot doc : task.getResult()) {
                                                     Timeslot t = doc.toObject(Timeslot.class);
                                                     t.setId(doc.getId());
@@ -87,5 +94,10 @@ public class StudentNotesManagement extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public void addNote(View view){
+        Intent intent = new Intent(this, StudentsNotesAdd.class);
+        startActivity(intent);
     }
 }

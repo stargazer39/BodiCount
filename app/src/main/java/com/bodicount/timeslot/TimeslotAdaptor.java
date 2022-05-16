@@ -75,6 +75,9 @@ public class TimeslotAdaptor extends RecyclerView.Adapter<TimeslotAdaptor.ViewHo
                                 case R.id.removeTimetable:
                                     Log.d("REMOVE", "remove clicked");
                                     removeTimeslot(ctx);
+                                    break;
+                                case R.id.timeSlotEdit:
+
                             }
                             return true;
                         }
@@ -111,6 +114,9 @@ public class TimeslotAdaptor extends RecyclerView.Adapter<TimeslotAdaptor.ViewHo
             }catch (Exception e){
                 e.printStackTrace();
             }
+        }
+        public void editTimeslot(Context ctx) {
+
         }
 
         public void removeTimeslot(Context ctx) {
